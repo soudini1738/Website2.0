@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="nl-be" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | ORBYTH</title>
+    <link rel="icon" type="image/png" href="pics/IconLogo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    
+    <style>
+        /* Shared Styles */
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #050505;
+            color: #e5e5e5;
+        }
+
+        .text-gold { color: #D1C4A9; }
+        .bg-gold { background-color: #D1C4A9; }
+        .border-gold { border-color: #D1C4A9; }
+        
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #F0E6D2 0%, #D1C4A9 50%, #8F8265 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        .glow-point {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(209, 196, 169, 0.15) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Logo Animation */
+        @keyframes expandText {
+            0% { width: 0; opacity: 0; transform: translateX(-10px); }
+            100% { width: 140px; opacity: 1; transform: translateX(0); }
+        }
+
+        .logo-text-reveal {
+            animation: expandText 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.2s;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 0; 
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-[#D1C4A9] selection:text-black overflow-x-hidden">
+
+    <!-- Navigation -->
+    <!-- Smart Navbar Logic: Fixed, transitions, transforms on scroll -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] border-b border-transparent px-6 py-5 transform">
+        <div class="max-w-7xl mx-auto flex items-center justify-between relative">
+            <a href="index.html" class="group flex items-center gap-3 relative z-50">
+                <img 
+                    src="pics/Logo.png" 
+                    alt="Orbyth Logo" 
+                    class="absolute w-20 h-auto top-1/2 -translate-y-1/2 left-0"
+                    onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNDUgMjBDMjUgMjAgMTUgMzUgMjAgNTVDMjIgNjMgMjggNjUgMjggNjVDMjggNjUgMjIgNjggMTUgNzVDMTUgNzUgMzUgOTAgNDUgNzBDNDggNjQgNDUgNjAgNDUgNjBDNTUgNTUgNjAgNDAgNDUgMjBaIiBmaWxsPSIjRDFDNEE5Ii8+PC9zdmc+'"
+                >
+                <div class="logo-text-reveal h-full flex items-center ml-14">
+                    <span class="text-xl font-light tracking-[0.25em] text-[#D1C4A9] pl-2">ORBYTH</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-sm font-light text-neutral-400 hover:text-white transition-colors">Home</a>
+                <a href="index.html#services" class="text-sm font-light text-neutral-400 hover:text-white transition-colors">Solutions</a>
+                <a href="index.html#process" class="text-sm font-light text-neutral-400 hover:text-white transition-colors">Process</a>
+                <a href="about.html" class="text-sm font-medium text-white transition-colors">About</a>
+                <a href="contact.html" class="text-sm font-light text-neutral-400 hover:text-white transition-colors">Contact</a>
+                <a href="https://www.linkedin.com/company/orbyth" target="_blank" class="text-neutral-400 hover:text-white transition-colors">
+                    <i data-lucide="linkedin" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <!-- CTA -->
+            <div class="hidden md:block">
+                <a href="https://calendly.com/orbyth/meeting" target="_blank" class="px-5 py-2 text-sm font-medium text-[#050505] bg-[#D1C4A9] hover:bg-[#e6dac0] transition-colors rounded-full">
+                   Book Discovery
+                </a>
+            </div>
+            
+             <!-- Mobile Menu Button -->
+             <button id="mobile-menu-btn" class="md:hidden text-white relative z-[60] p-2 hover:text-[#D1C4A9] transition-colors">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-[#050505]/95 backdrop-blur-xl border-b border-white/5 overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0 shadow-2xl">
+            <div class="flex flex-col items-center py-8 space-y-6">
+                <a href="index.html" class="mobile-link text-lg font-light text-neutral-400 hover:text-white transition-colors">Home</a>
+                <a href="index.html#services" class="mobile-link text-lg font-light text-neutral-400 hover:text-white transition-colors">Solutions</a>
+                <a href="index.html#process" class="mobile-link text-lg font-light text-neutral-400 hover:text-white transition-colors">Process</a>
+                <a href="about.html" class="mobile-link text-lg font-medium text-[#D1C4A9] transition-colors">About</a>
+                <a href="contact.html" class="mobile-link text-lg font-light text-neutral-400 hover:text-white transition-colors">Contact</a>
+                <a href="https://www.linkedin.com/company/orbyth" target="_blank" class="text-neutral-400 hover:text-white transition-colors">
+                    <i data-lucide="linkedin" class="w-4 h-4"></i>
+                </a>
+                
+                <a href="https://calendly.com/orbyth/meeting" target="_blank" class="mobile-link px-8 py-3 text-sm font-medium text-[#050505] bg-[#D1C4A9] rounded-full mt-4 hover:bg-[#e6dac0] transition-colors">
+                    Book Discovery
+                </a>
+
+                <!-- Added LinkedIn Icon to Mobile Menu -->
+                <a href="https://www.linkedin.com/company/orbyth" target="_blank" class="mobile-link text-neutral-400 hover:text-white transition-colors pt-4">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About ORBYTH Intro -->
+    <section class="pt-32 pb-16 px-6 bg-grid relative overflow-hidden">
+        <div class="glow-point top-0 right-0 translate-x-1/2 -translate-y-1/2"></div>
+        <div class="max-w-4xl mx-auto text-center space-y-6 relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm">
+                <span class="text-xs text-[#D1C4A9] font-medium tracking-wide uppercase">Systems Engineering & Automation</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-medium tracking-tight text-white leading-tight">
+                About <span class="text-gold-gradient">ORBYTH</span>
+            </h1>
+            <!-- md:text-center ensures it's left aligned on mobile, centered on desktop for better readability -->
+            <div class="text-lg text-neutral-400 font-light max-w-3xl mx-auto leading-relaxed space-y-6 text-left md:text-center">
+                <p>
+                    ORBYTH is a systems engineering and automation firm specialized in logistics operations.
+                </p>
+                <p>
+                    We design, integrate, and secure digital infrastructures for companies operating in warehousing, transport, and supply chain environments. Our work focuses on reducing operational friction by replacing fragmented tools and manual workflows with coherent, scalable systems.
+                </p>
+                <p>
+                    Founded by Souhaib and Ali, ORBYTH was built to solve a structural issue in logistics: operations have evolved faster than the systems supporting them.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do & Reality Section -->
+    <section class="py-20 px-6 border-y border-white/5 bg-neutral-900/10">
+        <!-- grid-cols-1 lg:grid-cols-2 ensures stacking on mobile -->
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+            <!-- Left: What ORBYTH Does -->
+            <div class="space-y-8">
+                <h2 class="text-3xl font-medium text-white tracking-tight">What <span class="text-[#D1C4A9]">ORBYTH</span> Does</h2>
+                <div class="space-y-6 text-neutral-400 font-light leading-relaxed">
+                    <p>
+                        ORBYTH operates at the system level of logistics organizations.
+                    </p>
+                    <p>We design and implement:</p>
+                    <ul class="space-y-3 mt-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#D1C4A9] shrink-0 mt-0.5"></i>
+                            <span>End-to-end workflow automation</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#D1C4A9] shrink-0 mt-0.5"></i>
+                            <span>Integrations between WMS, TMS, ERP, and external platforms</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#D1C4A9] shrink-0 mt-0.5"></i>
+                            <span>Custom internal interfaces and dashboards</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-[#D1C4A9] shrink-0 mt-0.5"></i>
+                            <span>Secure data flows and access control</span>
+                        </li>
+                    </ul>
+                    <p>
+                        Automation is applied selectively — only where it improves reliability, visibility, and control.
+                    </p>
+                    <p class="pt-4 border-t border-white/5 text-sm italic text-neutral-500">
+                        "No generic stacks. No rigid frameworks. Every solution is designed around how the operation actually runs."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right: Built for Logistics Reality -->
+            <div class="space-y-8">
+                <h2 class="text-3xl font-medium text-white tracking-tight">Built for <span class="text-[#D1C4A9]">Logistics Reality</span></h2>
+                <div class="bg-neutral-900/30 border border-white/5 p-8 rounded-2xl space-y-6">
+                    <p class="text-neutral-400 font-light">
+                        Logistics environments are defined by:
+                    </p>
+                    <ul class="space-y-2 text-neutral-400 font-light">
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#D1C4A9]"></span>High transaction volume</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#D1C4A9]"></span>Time-sensitive execution</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#D1C4A9]"></span>Multiple systems and stakeholders</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#D1C4A9]"></span>Low margin for error</li>
+                    </ul>
+                    <p class="text-neutral-400 font-light">
+                        Most inefficiencies are not caused by people, but by disconnected systems and unclear process ownership.
+                    </p>
+                    <p class="text-neutral-400 font-light">
+                        ORBYTH creates structured operational ecosystems where data moves predictably, processes execute consistently, and teams operate with clarity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions by Operational Role -->
+    <section class="py-24 px-6 relative overflow-hidden">
+        <div class="glow-point top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-50"></div>
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-medium text-white tracking-tight mb-4">Solutions by <span class="text-[#D1C4A9]">Operational Role</span></h2>
+                <p class="text-neutral-400 font-light max-w-2xl">Tailored approaches for every layer of your logistics organization.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- For Warehouse Operations -->
+                <div class="group p-8 rounded-2xl bg-neutral-900/30 border border-white/5 hover:border-[#D1C4A9]/30 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-[#D1C4A9]/10 flex items-center justify-center mb-6 text-[#D1C4A9]">
+                        <i data-lucide="package" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-medium text-white mb-4">For Warehouse Operations</h3>
+                    <p class="text-sm text-neutral-400 font-light mb-4 leading-relaxed">
+                        Warehouse teams deal with constant execution pressure and system fragmentation.
+                    </p>
+                    <p class="text-sm text-neutral-400 font-light mb-4">ORBYTH helps warehouse operations by:</p>
+                    <ul class="space-y-2 text-sm text-neutral-500 font-light mb-6">
+                        <li>• Automating inbound, outbound, and internal warehouse workflows</li>
+                        <li>• Connecting WMS with planning, reporting, and external systems</li>
+                        <li>• Reducing manual data entry and operational handoffs</li>
+                        <li>• Providing clear, role-based interfaces for daily execution</li>
+                    </ul>
+                    <div class="mt-auto pt-4 border-t border-white/5">
+                        <span class="text-xs font-medium text-white">The result: fewer errors, faster throughput, and predictable warehouse operations.</span>
+                    </div>
+                </div>
+
+                <!-- For Transport & Dispatch Operations -->
+                <div class="group p-8 rounded-2xl bg-neutral-900/30 border border-white/5 hover:border-[#D1C4A9]/30 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-[#D1C4A9]/10 flex items-center justify-center mb-6 text-[#D1C4A9]">
+                        <i data-lucide="truck" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-medium text-white mb-4">For Transport & Dispatch Operations</h3>
+                    <p class="text-sm text-neutral-400 font-light mb-4 leading-relaxed">
+                        Transport operations depend on timing, coordination, and accurate data.
+                    </p>
+                    <p class="text-sm text-neutral-400 font-light mb-4">ORBYTH supports transport teams by:</p>
+                    <ul class="space-y-2 text-sm text-neutral-500 font-light mb-6">
+                        <li>• Integrating TMS with order, warehouse, and financial systems</li>
+                        <li>• Automating dispatch, status updates, and exception handling</li>
+                        <li>• Centralizing operational visibility across shipments and partners</li>
+                        <li>• Reducing dependency on manual coordination and ad-hoc communication</li>
+                    </ul>
+                    <div class="mt-auto pt-4 border-t border-white/5">
+                        <span class="text-xs font-medium text-white">The result: improved planning accuracy, better service levels, and lower operational stress.</span>
+                    </div>
+                </div>
+
+                <!-- For Management & Decision Makers -->
+                <div class="group p-8 rounded-2xl bg-neutral-900/30 border border-white/5 hover:border-[#D1C4A9]/30 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-[#D1C4A9]/10 flex items-center justify-center mb-6 text-[#D1C4A9]">
+                        <i data-lucide="bar-chart-2" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-medium text-white mb-4">For Management & Decision Makers</h3>
+                    <p class="text-sm text-neutral-400 font-light mb-4 leading-relaxed">
+                        Management requires control, visibility, and systems that scale.
+                    </p>
+                    <p class="text-sm text-neutral-400 font-light mb-4">ORBYTH delivers for leadership teams by:</p>
+                    <ul class="space-y-2 text-sm text-neutral-500 font-light mb-6">
+                        <li>• Creating real-time operational dashboards and reporting layers</li>
+                        <li>• Ensuring data consistency across departments</li>
+                        <li>• Building secure, auditable system architectures</li>
+                        <li>• Reducing operational risk tied to key individuals or manual processes</li>
+                    </ul>
+                    <div class="mt-auto pt-4 border-t border-white/5">
+                        <span class="text-xs font-medium text-white">The result: informed decision-making and infrastructure that supports growth without increasing complexity.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How ORBYTH Works & Why ORBYTH -->
+    <section class="py-24 px-6 border-t border-white/5 bg-[#080808]">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <!-- How ORBYTH Works -->
+            <div>
+                <h2 class="text-3xl font-medium text-white tracking-tight mb-6">How <span class="text-[#D1C4A9]">ORBYTH</span> Works</h2>
+                <div class="space-y-6 text-neutral-400 font-light">
+                    <p>
+                        ORBYTH does not act as a tool reseller or short-term implementer.
+                    </p>
+                    <p>
+                        We engage as long-term technical partners and deliver:
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3">
+                            <div class="w-1.5 h-1.5 rounded-full bg-[#D1C4A9]"></div>
+                            <span>Clear system architecture</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-1.5 h-1.5 rounded-full bg-[#D1C4A9]"></div>
+                            <span>Transparent logic and documentation</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-1.5 h-1.5 rounded-full bg-[#D1C4A9]"></div>
+                            <span>Maintainable solutions that internal teams can own and extend</span>
+                        </li>
+                    </ul>
+                    <p>
+                        Our systems are designed to remain stable as operations grow and tools evolve.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Why ORBYTH -->
+            <div class="bg-neutral-900 rounded-2xl p-8 border border-white/5">
+                <h3 class="text-2xl font-medium text-white mb-6">Why ORBYTH</h3>
+                <p class="text-neutral-400 font-light mb-6">Organizations work with ORBYTH when they need:</p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-4 p-4 rounded-lg bg-white/5 border border-white/5 hover:border-[#D1C4A9]/30 transition-colors">
+                        <div class="w-2 h-2 rounded-full bg-[#D1C4A9]"></div>
+                        <span class="text-neutral-300 font-light">Fewer manual operations</span>
+                    </li>
+                    <li class="flex items-center gap-4 p-4 rounded-lg bg-white/5 border border-white/5 hover:border-[#D1C4A9]/30 transition-colors">
+                        <div class="w-2 h-2 rounded-full bg-[#D1C4A9]"></div>
+                        <span class="text-neutral-300 font-light">Clear operational visibility</span>
+                    </li>
+                    <li class="flex items-center gap-4 p-4 rounded-lg bg-white/5 border border-white/5 hover:border-[#D1C4A9]/30 transition-colors">
+                        <div class="w-2 h-2 rounded-full bg-[#D1C4A9]"></div>
+                        <span class="text-neutral-300 font-light">Secure, scalable infrastructure</span>
+                    </li>
+                    <li class="flex items-center gap-4 p-4 rounded-lg bg-white/5 border border-white/5 hover:border-[#D1C4A9]/30 transition-colors">
+                        <div class="w-2 h-2 rounded-full bg-[#D1C4A9]"></div>
+                        <span class="text-neutral-300 font-light">Automation aligned with logistics reality</span>
+                    </li>
+                </ul>
+                <div class="mt-8 text-center">
+                    <p class="text-white font-medium italic">"ORBYTH delivers engineered systems — not packaged promises."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="pt-24 pb-12 px-6 border-t border-white/5 bg-[#080808]">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-0.5 mb-6">
+                       <img 
+                           src="pics/ORBYTH.png" 
+                           alt="Orbyth Logo" 
+                           class="w-12 h-auto"
+                           onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNDUgMjBDMjUgMjAgMTUgMzUgMjAgNTVDMjIgNjMgMjggNjUgMjggNjVDMjggNjUgMjIgNjggMTUgNzVDMTUgNzUgMzUgOTAgNDUgNzBDNDggNjQgNDUgNjAgNDUgNjBDNTUgNTUgNjAgNDAgNDUgMjBaIiBmaWxsPSIjRDFDNEE5Ii8+PC9zdmc+'"
+                        >
+                        <span class="text-lg font-light tracking-[0.2em] text-[#D1C4A9]">ORBYTH</span>
+                    </div>
+                    <p class="text-neutral-500 font-light max-w-sm mb-8 text-base">
+                        Redefining agency operations through the lens of Artificial Intelligence.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/company/orbyth" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-neutral-400 hover:text-[#D1C4A9] hover:bg-white/10 transition-all">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="mailto:executive@orbyth.com" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-neutral-400 hover:text-[#D1C4A9] hover:bg-white/10 transition-all">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-medium mb-6 text-sm">Sitemap</h4>
+                    <ul class="space-y-4">
+                        <li><a href="index.html#services" class="text-neutral-500 hover:text-[#D1C4A9] text-sm font-light transition-colors">Solutions</a></li>
+                        <li><a href="index.html#process" class="text-neutral-500 hover:text-[#D1C4A9] text-sm font-light transition-colors">Methodology</a></li>
+                        <li><a href="#" class="text-neutral-500 hover:text-[#D1C4A9] text-sm font-light transition-colors">Case Studies</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-medium mb-6 text-sm">Contact</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-2 text-neutral-500 text-sm font-light">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <a href="mailto:executive@orbyth.com" class="hover:text-neutral-700 transition-colors">
+                                executive@orbyth.com
+                            </a>
+                        </li>
+                        <li class="flex items-center gap-2 text-neutral-500 text-sm font-light">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            Antwerp, Belgium
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-neutral-600 text-xs font-light">
+                    © 2025 ORBYTH. All rights reserved.
+                </p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-neutral-600 hover:text-white text-xs font-light transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-neutral-600 hover:text-white text-xs font-light transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar Interaction Logic
+        const navbar = document.getElementById('navbar');
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let lastScrollY = window.scrollY;
+        let isMenuOpen = false;
+
+        // Toggle Menu Function
+        mobileBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            const icon = mobileBtn.querySelector('i');
+            
+            if (isMenuOpen) {
+                // Open Menu: Add height and opacity
+                mobileMenu.classList.remove('max-h-0', 'opacity-0');
+                mobileMenu.classList.add('max-h-screen', 'opacity-100');
+                // Optional: Change icon to X
+                if(icon) icon.setAttribute('data-lucide', 'x');
+            } else {
+                // Close Menu
+                mobileMenu.classList.remove('max-h-screen', 'opacity-100');
+                mobileMenu.classList.add('max-h-0', 'opacity-0');
+                // Optional: Change icon back to Menu
+                if(icon) icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        });
+
+        // Close menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenu.classList.remove('max-h-screen', 'opacity-100');
+                mobileMenu.classList.add('max-h-0', 'opacity-0');
+                const icon = mobileBtn.querySelector('i');
+                if(icon) icon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+        // Scroll Logic for Navbar Background & Smart Scroll
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            // Only act if not at the very top
+            if (currentScrollY > 10) {
+                // Determine direction
+                if (currentScrollY > lastScrollY) {
+                    // Scrolling DOWN
+                    if (!isMenuOpen) { // Don't hide if menu is open
+                        navbar.classList.add('-translate-y-full');
+                    }
+                    // Style updates (Compact mode)
+                    navbar.classList.remove('backdrop-blur-xl', 'bg-[#050505]/40', 'py-5');
+                    navbar.classList.add('backdrop-blur-3xl', 'bg-[#050505]/50', 'border-white/5', 'py-3');
+                    navbar.classList.remove('border-transparent');
+                } else {
+                    // Scrolling UP
+                    navbar.classList.remove('-translate-y-full');
+                    
+                    // Style updates (Keep compact)
+                    navbar.classList.remove('backdrop-blur-3xl', 'bg-[#050505]/50');
+                    navbar.classList.add('backdrop-blur-xl', 'bg-[#050505]/40', 'py-3');
+                }
+            } else {
+                // At Top (Reset)
+                navbar.classList.remove('-translate-y-full');
+                navbar.classList.remove('backdrop-blur-3xl', 'backdrop-blur-xl', 'bg-[#050505]/50', 'bg-[#050505]/40', 'border-white/5', 'py-3');
+                navbar.classList.add('border-transparent', 'py-5');
+            }
+            lastScrollY = currentScrollY;
+        });
+
+    </script>
+
+</body>
+</html>

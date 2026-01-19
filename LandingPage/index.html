@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="nl-be" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORBYTH</title>
+    <link rel="icon" type="image/png" href="pics/IconLogo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom Font settings */
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #050505; /* Deep dark background */
+            color: #e5e5e5;
+        }
+
+        /* Custom Gold Color Utilities */
+        .text-gold { color: #D1C4A9; }
+        .bg-gold { background-color: #D1C4A9; }
+        .border-gold { border-color: #D1C4A9; }
+        
+        /* Gradient Text for Gold effect */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #F0E6D2 0%, #D1C4A9 50%, #8F8265 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Logo Reveal Animation */
+        @keyframes expandText {
+            0% {
+                width: 0;
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            100% {
+                width: 140px; /* Approximate width of text */
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInLetter {
+            from { opacity: 0; filter: blur(4px); }
+            to { opacity: 1; filter: blur(0); }
+        }
+
+        .logo-text-reveal {
+            animation: expandText 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.2s;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 0; /* Start hidden */
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* Subtle grid background */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        /* Glow effects */
+        .glow-point {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(209, 196, 169, 0.15) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Marquee Animation 
+           Snelheid op 30s gezet omdat de content breder is geworden met tekst.
+           Dit zorgt voor een vlotte, leesbare loop.
+        */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+            animation: scroll 30s linear infinite;
+            /* Zorgt dat de flex container breed genoeg is voor alle items */
+            width: fit-content; 
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-[#D1C4A9] selection:text-black overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] border-b border-transparent px-6 py-5 transform">
+        <div class="max-w-7xl mx-auto flex items-center justify-between relative">
+            
+            <!-- Logo Container -->
+            <a href="#" class="group flex items-center gap-3 relative z-50">
+                <img 
+                    src="pics/Logo.png" 
+                    alt="Orbyth Logo" 
+                    class="absolute w-24 h-auto top-1/2 -translate-y-1/2 left-0"
+                    onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNDUgMjBDMjUgMjAgMTUgMzUgMjAgNTVDMjIgNjMgMjggNjUgMjggNjVDMjggNjUgMjIgNjggMTUgNzVDMTUgNzUgMzUgOTAgNDUgNzBDNDggNjQgNDUgNjAgNDUgNjBDNTUgNTUgNjAgNDAgNDUgMjBaIiBmaWxsPSIjRDFDNEE5Ii8+PC9zdmc+'"
+                >
+                <!-- Text that rolls out -->
+                <div class="logo-text-reveal h-full flex items-center ml-16">
+                    <span class="text-xl font-light tracking-[0.25em] text-[#D1C4A9] pl-2">ORBYTH</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#" class="text-sm font-light text-neutral-400 hover:text-white transition-colors">Home</a>
+                <a href="#services" class="text-sm font-light text-neutral-400 hover:text-white transition-colors">Solutions</a>
+                <a href="#process" class="text-sm font-light text-neutral-400 hover:text-white transition-colors">Process</a>
+                <a href="about.html" class="text-sm font-light text-neutral-400 hover:text-white transition-colors">About</a>
+                <a href="contact.html" class="text-sm font-light text-neutral-400 hover:text-white transition-colors">Contact</a>
+                <a href="https://www.linkedin.com/company/orbyth" target="_blank" class="text-neutral-400 hover:text-white transition-colors">
+                    <i data-lucide="linkedin" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <!-- CTA -->
+            <div class="hidden md:block">
+                <a href="https://calendly.com/orbyth/meeting" target="_blank" rel="noopener noreferrer" class="px-5 py-2 text-sm font-medium text-[#050505] bg-[#D1C4A9] hover:bg-[#e6dac0] transition-colors rounded-full">
+                   Book Discovery
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white relative z-[60] p-2 hover:text-[#D1C4A9] transition-colors">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-[#050505]/95 backdrop-blur-xl border-b border-white/5 overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0 shadow-2xl">
+            <div class="flex flex-col items-center py-8 space-y-6">
+                <a href="#" class="mobile-link text-lg font-light text-neutral-400 hover:text-white transition-colors">Home</a>
+                <a href="#services" class="mobile-link text-lg font-light text-neutral-400 hover:text-white transition-colors">Solutions</a>
+                <a href="#process" class="mobile-link text-lg font-light text-neutral-400 hover:text-white transition-colors">Process</a>
+                <a href="about.html" class="mobile-link text-lg font-light text-neutral-400 hover:text-white transition-colors">About</a>
+                <a href="contact.html" class="mobile-link text-lg font-medium text-[#D1C4A9] transition-colors">Contact</a>
+                
+                <a href="https://calendly.com/orbyth/meeting" target="_blank" class="mobile-link px-8 py-3 text-sm font-medium text-[#050505] bg-[#D1C4A9] rounded-full mt-4 hover:bg-[#e6dac0] transition-colors">
+                    Book Discovery
+                </a>
+
+                <a href="https://www.linkedin.com/company/orbyth" target="_blank" class="mobile-link text-neutral-400 hover:text-white transition-colors pt-4">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col justify-center items-center pt-20 px-6 overflow-hidden bg-grid">
+        <!-- Ambient Glow -->
+        <div class="glow-point top-1/4 left-1/4"></div>
+        <div class="glow-point bottom-1/4 right-1/4 translate-x-10"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto text-center space-y-8">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight leading-[1.1] text-white">
+                We don't just <br>
+                <span class="text-gold-gradient">AI.</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto font-light leading-relaxed">
+                We engineer your unfair advantage.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="contact.html" class="w-full sm:w-auto px-8 py-3.5 bg-[#D1C4A9] text-[#050505] font-semibold text-sm rounded-full hover:bg-[#e6dac0] transition-all hover:scale-[1.02]">
+                    Build My Future
+                </a>
+                <a href="#services" class="w-full sm:w-auto px-8 py-3.5 border border-neutral-800 text-white font-medium text-sm rounded-full hover:bg-white/5 transition-all group flex items-center justify-center gap-2">
+                    Explore Solutions
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-neutral-500 group-hover:text-white transition-colors"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="w-5 h-5 text-neutral-600"></i>
+        </div>
+    </section>
+
+    <!-- Partners / Trust (Marquee Animation) -->
+    <section class="py-12 border-y border-white/5 bg-black/20 overflow-hidden">
+        <div class="w-full relative">
+            <div class="text-center mb-10">
+                <p class="text-xs text-neutral-500 uppercase tracking-widest font-medium">Powering next-gen companies</p>
+            </div>
+            
+            <!-- Fade edges for smooth look -->
+            <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none"></div>
+
+            <div class="flex animate-scroll opacity-70 hover:opacity-100 transition-opacity duration-500">
+                <!-- LOGO SET 1 -->
+                <!-- Changed gap-20 to gap-16 to match individual items gap if needed, or keep uniform gap-16 between items -->
+                <div class="flex items-center gap-20 mx-8">
+                    <!-- n8n -->
+                    <div class="flex items-center gap-2.5">
+                        <img src="https://cdn.simpleicons.org/n8n/white" alt="n8n" class="h-6 w-auto">
+                        <span class="text-xl font-bold text-white tracking-tight" style="font-family: 'Inter', sans-serif;">n8n</span>
+                    </div>
+                    
+                    <!-- Microsoft -->
+                    <div class="flex items-center gap-2.5">
+                        <img src="pics/microsoft.png" alt="Microsoft" class="h-6 w-auto">
+                        <span class="text-xl font-semibold text-white tracking-normal" style="font-family: 'Segoe UI', sans-serif;">Microsoft</span>
+                    </div>
+
+                    <!-- Google Cloud -->
+                    <div class="flex items-center gap-2.5">
+                        <img src="https://cdn.simpleicons.org/googlecloud/white" alt="Google Cloud" class="h-6 w-auto">
+                        <span class="text-xl font-medium text-white tracking-tight" style="font-family: sans-serif;">Google</span>
+                    </div>
+
+                    <!-- Workato -->
+                    <div class="flex items-center gap-2.5">
+                        <img src="pics/Untitled-design-3.png" alt="Workato" class="h-6 w-auto">
+                        <span class="text-xl font-bold text-white tracking-wide" style="font-family: sans-serif;">Workato</span>
+                    </div>
+
+                    <!-- Salesforce -->
+                    <div class="flex items-center gap-2.5">
+                        <img src="pics/salesforceLogo-removebg-preview.png" alt="Salesforce" class="h-8 w-auto">
+                        <span class="text-xl font-light text-white tracking-tight italic" style="font-family: serif;">Salesforce</span>
+                    </div>
+
+                    <!-- Okta -->
+                    <div class="flex items-center gap-2.5">
+                        <img src="https://cdn.simpleicons.org/okta/white" alt="Okta" class="h-6 w-auto">
+                        <span class="text-xl font-bold text-white tracking-normal" style="font-family: sans-serif;">Okta</span>
+                    </div>
+
+                    <!-- GitHub -->
+                    <div class="flex items-center gap-2.5">
+                        <img src="https://cdn.simpleicons.org/github/white" alt="GitHub" class="h-6 w-auto">
+                        <span class="text-xl font-bold text-white tracking-tight" style="font-family: -apple-system, sans-serif;">GitHub</span>
+                    </div>
+
+                    <!-- SAP -->
+                    <div class="flex items-center gap-2.5">
+                        <img src="https://cdn.simpleicons.org/sap/white" alt="SAP" class="h-8 w-auto">
+                        <span class="text-xl font-bold text-white tracking-normal" style="font-family: Arial, sans-serif;">SAP</span>
+                    </div>
+                </div>
+
+                <!-- LOGO SET 2 (Duplicate for seamless loop) -->
+                <div class="flex items-center gap-20 mx-8">
+                    <!-- n8n -->
+                    <div class="flex items-center gap-2.5">
+                        <img src="https://cdn.simpleicons.org/n8n/white" alt="n8n" class="h-6 w-auto">
+                        <span class="text-xl font-bold text-white tracking-tight" style="font-family: 'Inter', sans-serif;">n8n</span>
+                    </div>
+
+                    <!-- Microsoft -->
+                    <div class="flex items-center gap-2.5">
+                        <img src="pics/microsoft.png" alt="Microsoft" class="h-6 w-auto">
+                        <span class="text-xl font-semibold text-white tracking-normal" style="font-family: 'Segoe UI', sans-serif;">Microsoft</span>
+                    </div>
+
+                    <!-- Google Cloud -->
+                    <div class="flex items-center gap-2.5">
+                        <img src="https://cdn.simpleicons.org/googlecloud/white" alt="Google Cloud" class="h-6 w-auto">
+                        <span class="text-xl font-medium text-white tracking-tight" style="font-family: sans-serif;">Google</span>
+                    </div>
+
+                    <!-- Workato -->
+                    <div class="flex items-center gap-2.5">
+                        <img src="pics/Untitled-design-3.png" alt="Workato" class="h-6 w-auto">
+                        <span class="text-xl font-bold text-white tracking-wide" style="font-family: sans-serif;">Workato</span>
+                    </div>
+
+                    <!-- Salesforce -->
+                    <div class="flex items-center gap-2.5">
+                        <img src="pics/salesforceLogo-removebg-preview.png" alt="Salesforce" class="h-8 w-auto">
+                        <span class="text-xl font-light text-white tracking-tight italic" style="font-family: serif;">Salesforce</span>
+                    </div>
+
+                    <!-- Okta -->
+                    <div class="flex items-center gap-2.5">
+                        <img src="https://cdn.simpleicons.org/okta/white" alt="Okta" class="h-6 w-auto">
+                        <span class="text-xl font-bold text-white tracking-normal" style="font-family: sans-serif;">Okta</span>
+                    </div>
+
+                    <!-- GitHub -->
+                    <div class="flex items-center gap-2.5">
+                        <img src="https://cdn.simpleicons.org/github/white" alt="GitHub" class="h-6 w-auto">
+                        <span class="text-xl font-bold text-white tracking-tight" style="font-family: -apple-system, sans-serif;">GitHub</span>
+                    </div>
+
+                    <!-- SAP -->
+                    <div class="flex items-center gap-2.5">
+                        <img src="https://cdn.simpleicons.org/sap/white" alt="SAP" class="h-8 w-auto">
+                        <span class="text-xl font-bold text-white tracking-normal" style="font-family: Arial, sans-serif;">SAP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 md:py-32 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16 md:mb-24">
+                <h2 class="text-3xl md:text-5xl font-medium text-white tracking-tight mb-6">
+                    Three pillars. <br>
+                    <span class="text-neutral-500">One intelligent ecosystem.</span>
+                </h2>
+                <p class="text-lg text-neutral-400 font-light max-w-2xl leading-relaxed">
+                    We demystify complexity. We turn scattered processes into a unified machine that runs on autopilot.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- PILLAR 1: ORBYTH FLOWS -->
+                <div class="group relative p-8 rounded-2xl bg-neutral-900/30 border border-white/5 hover:border-[#D1C4A9]/30 transition-all duration-500 overflow-hidden flex flex-col h-full">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#D1C4A9]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10 flex flex-col h-full">
+                        <div class="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-[#D1C4A9]">
+                            <i data-lucide="network" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-xs font-bold text-[#D1C4A9] tracking-widest uppercase mb-2">ORBYTH FLOWS™</h4>
+                        <h3 class="text-xl font-medium text-white mb-4 tracking-tight">Workflow Automation & Integration</h3>
+                        
+                        <p class="text-sm text-neutral-400 font-light leading-relaxed mb-6 flex-grow">
+                            Stop wasting hours on manual tasks. We connect your disconnected apps (CRM, Email, ERP) and build intelligent pipelines that move data instantly and automatically.
+                        </p>
+                        
+                        <div class="pt-6 border-t border-white/5 mt-auto">
+                            <span class="text-sm font-medium text-white italic">"Replace hours with minutes."</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PILLAR 2: ORBYTH TOOLS -->
+                <div class="group relative p-8 rounded-2xl bg-neutral-900/30 border border-white/5 hover:border-[#D1C4A9]/30 transition-all duration-500 overflow-hidden flex flex-col h-full">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#D1C4A9]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10 flex flex-col h-full">
+                        <div class="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-[#D1C4A9]">
+                            <i data-lucide="layout-grid" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-xs font-bold text-[#D1C4A9] tracking-widest uppercase mb-2">ORBYTH TOOLS™</h4>
+                        <h3 class="text-xl font-medium text-white mb-4 tracking-tight">Custom Internal Tools & AI Interfaces</h3>
+                        
+                        <p class="text-sm text-neutral-400 font-light leading-relaxed mb-6 flex-grow">
+                            Your business is unique; your software should be too. We build custom dashboards and AI-powered interfaces designed specifically around how <em>you</em> work, not how software dictates you should.
+                        </p>
+                        
+                        <div class="pt-6 border-t border-white/5 mt-auto">
+                            <span class="text-sm font-medium text-white italic">"We build the tool you wish existed."</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PILLAR 3: ORBYTH OPS -->
+                <div class="group relative p-8 rounded-2xl bg-neutral-900/30 border border-white/5 hover:border-[#D1C4A9]/30 transition-all duration-500 overflow-hidden flex flex-col h-full">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#D1C4A9]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10 flex flex-col h-full">
+                        <div class="w-12 h-12 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-[#D1C4A9]">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                        </div>
+                        <h4 class="text-xs font-bold text-[#D1C4A9] tracking-widest uppercase mb-2">ORBYTH OPS™</h4>
+                        <h3 class="text-xl font-medium text-white mb-4 tracking-tight">Full AI Operations Management</h3>
+                        
+                        <p class="text-sm text-neutral-400 font-light leading-relaxed mb-6 flex-grow">
+                            Technology needs maintenance. We don't just build and leave; we monitor, optimize, and scale your AI infrastructure continuously. You get the results, we handle the engine.
+                        </p>
+                        
+                        <div class="pt-6 border-t border-white/5 mt-auto">
+                            <span class="text-sm font-medium text-white italic">"AI that never sleeps."</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology / Process -->
+    <section id="process" class="py-24 bg-neutral-900/20 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-medium text-white tracking-tight mb-6">
+                    Orchestrating efficiency <br>
+                    <span class="text-[#D1C4A9]">step by step.</span>
+                </h2>
+                <p class="text-lg text-neutral-400 font-light mb-8">
+                    We don't just plug in software. We deconstruct your business model and reconstruct it with an AI-first backbone.
+                </p>
+                
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="flex-none pt-1">
+                            <div class="w-6 h-6 rounded-full border border-[#D1C4A9] flex items-center justify-center text-[10px] text-[#D1C4A9]">01</div>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium mb-1">Audit &amp; Discovery</h4>
+                            <p class="text-neutral-500 font-light text-sm">We analyze your current bottlenecks and identify high-impact automation opportunities.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-none pt-1">
+                            <div class="w-6 h-6 rounded-full border border-neutral-700 flex items-center justify-center text-[10px] text-neutral-500">02</div>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium mb-1">Development &amp; Integration</h4>
+                            <p class="text-neutral-500 font-light text-sm">Our engineers build custom workflows and train AI models specific to your data.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-none pt-1">
+                            <div class="w-6 h-6 rounded-full border border-neutral-700 flex items-center justify-center text-[10px] text-neutral-500">03</div>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium mb-1">Deployment &amp; Scale</h4>
+                            <p class="text-neutral-500 font-light text-sm">We launch the system, monitor performance, and iterate to maximize ROI.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abstract Visual -->
+            <div class="relative h-[400px] w-full bg-neutral-900 rounded-2xl border border-white/5 overflow-hidden flex items-center justify-center">
+                 <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+                 <!-- Decorative Elements -->
+                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-[#D1C4A9]/20 rounded-full animate-[spin_10s_linear_infinite]"></div>
+                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-[#D1C4A9]/40 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+                 <div class="text-[#D1C4A9]">
+                     <i data-lucide="cpu" class="w-12 h-12"></i>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="pt-24 pb-12 px-6 border-t border-white/5 bg-[#080808]">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-0.5 mb-6">
+                       <img 
+                           src="pics/ORBYTH.png" 
+                           alt="Orbyth Logo" 
+                           class="w-12 h-auto"
+                           onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNDUgMjBDMjUgMjAgMTUgMzUgMjAgNTVDMjIgNjMgMjggNjUgMjggNjVDMjggNjUgMjIgNjggMTUgNzVDMTUgNzUgMzUgOTAgNDUgNzBDNDggNjQgNDUgNjAgNDUgNjBDNTUgNTUgNjAgNDAgNDUgMjBaIiBmaWxsPSIjRDFDNEE5Ii8+PC9zdmc+'"
+                        >
+                        <span class="text-lg font-light tracking-[0.2em] text-[#D1C4A9]">ORBYTH</span>
+                    </div>
+                    <p class="text-neutral-500 font-light max-w-sm mb-8 text-base">
+                        Redefining agency operations through the lens of Artificial Intelligence.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/company/orbyth" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-neutral-400 hover:text-[#D1C4A9] hover:bg-white/10 transition-all">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="mailto:executive@orbyth.com" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-neutral-400 hover:text-[#D1C4A9] hover:bg-white/10 transition-all">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-medium mb-6 text-sm">Sitemap</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#services" class="text-neutral-500 hover:text-[#D1C4A9] text-sm font-light transition-colors">Solutions</a></li>
+                        <li><a href="#process" class="text-neutral-500 hover:text-[#D1C4A9] text-sm font-light transition-colors">Methodology</a></li>
+                        <li><a href="#" class="text-neutral-500 hover:text-[#D1C4A9] text-sm font-light transition-colors">Case Studies</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-medium mb-6 text-sm">Contact</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-2 text-neutral-500 text-sm font-light">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <a href="mailto:executive@orbyth.com" class="hover:text-neutral-700 transition-colors">
+                                executive@orbyth.com
+                            </a>
+                        </li>
+                        <li class="flex items-center gap-2 text-neutral-500 text-sm font-light">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            Antwerp, Belgium
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-neutral-600 text-xs font-light">
+                    © 2025 ORBYTH. All rights reserved.
+                </p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-neutral-600 hover:text-white text-xs font-light transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-neutral-600 hover:text-white text-xs font-light transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar Interaction Logic
+        const navbar = document.getElementById('navbar');
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let lastScrollY = window.scrollY;
+        let isMenuOpen = false;
+
+        // Toggle Menu Function
+        mobileBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            const icon = mobileBtn.querySelector('i');
+            
+            if (isMenuOpen) {
+                // Open Menu: Add height and opacity
+                mobileMenu.classList.remove('max-h-0', 'opacity-0');
+                mobileMenu.classList.add('max-h-screen', 'opacity-100');
+                // Optional: Change icon to X
+                if(icon) icon.setAttribute('data-lucide', 'x');
+            } else {
+                // Close Menu
+                mobileMenu.classList.remove('max-h-screen', 'opacity-100');
+                mobileMenu.classList.add('max-h-0', 'opacity-0');
+                // Optional: Change icon back to Menu
+                if(icon) icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        });
+
+        // Close menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenu.classList.remove('max-h-screen', 'opacity-100');
+                mobileMenu.classList.add('max-h-0', 'opacity-0');
+                const icon = mobileBtn.querySelector('i');
+                if(icon) icon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+        // Scroll Logic for Navbar Background & Smart Scroll
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            // Only act if not at the very top
+            if (currentScrollY > 10) {
+                // Determine direction
+                if (currentScrollY > lastScrollY) {
+                    // Scrolling DOWN
+                    if (!isMenuOpen) { // Don't hide if menu is open
+                        navbar.classList.add('-translate-y-full');
+                    }
+                    // Style updates (Compact mode)
+                    navbar.classList.remove('backdrop-blur-xl', 'bg-[#050505]/40', 'py-5');
+                    navbar.classList.add('backdrop-blur-3xl', 'bg-[#050505]/50', 'border-white/5', 'py-3');
+                    navbar.classList.remove('border-transparent');
+                } else {
+                    // Scrolling UP
+                    navbar.classList.remove('-translate-y-full');
+                    
+                    // Style updates (Keep compact)
+                    navbar.classList.remove('backdrop-blur-3xl', 'bg-[#050505]/50');
+                    navbar.classList.add('backdrop-blur-xl', 'bg-[#050505]/40', 'py-3');
+                }
+            } else {
+                // At Top (Reset)
+                navbar.classList.remove('-translate-y-full');
+                navbar.classList.remove('backdrop-blur-3xl', 'backdrop-blur-xl', 'bg-[#050505]/50', 'bg-[#050505]/40', 'border-white/5', 'py-3');
+                navbar.classList.add('border-transparent', 'py-5');
+            }
+            lastScrollY = currentScrollY;
+        });
+
+    </script>
+
+</body>
+</html>
