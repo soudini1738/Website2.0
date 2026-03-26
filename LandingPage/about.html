@@ -17,6 +17,7 @@
             font-family: 'Manrope', sans-serif;
             background-color: #050505;
             color: #e5e5e5;
+            overflow-x: hidden; /* Toegevoegd om horizontale scroll te voorkomen tijdens animatie */
         }
 
         .text-gold { color: #D1C4A9; }
@@ -27,6 +28,19 @@
             background: linear-gradient(135deg, #F0E6D2 0%, #D1C4A9 50%, #8F8265 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        /* Uiterst trage, boterzachte reveal animaties */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 2.5s cubic-bezier(0.19, 1, 0.22, 1), transform 2.5s cubic-bezier(0.19, 1, 0.22, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal-up.is-revealed {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .bg-grid {
@@ -66,7 +80,7 @@
 
     <!-- Navigation -->
     <!-- Smart Navbar Logic: Fixed, transitions, transforms on scroll -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] border-b border-transparent px-6 py-5 transform">
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] border-b border-transparent px-6 py-5 transform">
         <div class="max-w-7xl mx-auto flex items-center justify-between relative">
             <a href="index.html" class="group flex items-center gap-3 relative z-50">
                 <img 
@@ -128,16 +142,16 @@
 
     <!-- About ORBYTH Intro -->
     <section class="pt-32 pb-16 px-6 bg-grid relative overflow-hidden">
-        <div class="glow-point top-0 right-0 translate-x-1/2 -translate-y-1/2"></div>
+        <div class="glow-point top-0 right-0 translate-x-1/2 -translate-y-1/2 reveal-up hero-element" style="transition-delay: 0.2s;"></div>
         <div class="max-w-4xl mx-auto text-center space-y-6 relative z-10">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-800 bg-neutral-900/50 backdrop-blur-sm reveal-up hero-element" style="transition-delay: 0.3s;">
                 <span class="text-xs text-[#D1C4A9] font-medium tracking-wide uppercase">Systems Engineering & Automation</span>
             </div>
-            <h1 class="text-4xl md:text-6xl font-medium tracking-tight text-white leading-tight">
+            <h1 class="text-4xl md:text-6xl font-medium tracking-tight text-white leading-tight reveal-up hero-element" style="transition-delay: 0.4s;">
                 About <span class="text-gold-gradient">ORBYTH</span>
             </h1>
             <!-- md:text-center ensures it's left aligned on mobile, centered on desktop for better readability -->
-            <div class="text-lg text-neutral-400 font-light max-w-3xl mx-auto leading-relaxed space-y-6 text-left md:text-center">
+            <div class="text-lg text-neutral-400 font-light max-w-3xl mx-auto leading-relaxed space-y-6 text-left md:text-center reveal-up hero-element" style="transition-delay: 0.5s;">
                 <p>
                     ORBYTH is a systems engineering and automation firm specialized in logistics operations.
                 </p>
@@ -156,7 +170,7 @@
         <!-- grid-cols-1 lg:grid-cols-2 ensures stacking on mobile -->
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
             <!-- Left: What ORBYTH Does -->
-            <div class="space-y-8">
+            <div class="space-y-8 reveal-up scroll-element stagger-1">
                 <h2 class="text-3xl font-medium text-white tracking-tight">What <span class="text-[#D1C4A9]">ORBYTH</span> Does</h2>
                 <div class="space-y-6 text-neutral-400 font-light leading-relaxed">
                     <p>
@@ -191,7 +205,7 @@
             </div>
 
             <!-- Right: Built for Logistics Reality -->
-            <div class="space-y-8">
+            <div class="space-y-8 reveal-up scroll-element stagger-2">
                 <h2 class="text-3xl font-medium text-white tracking-tight">Built for <span class="text-[#D1C4A9]">Logistics Reality</span></h2>
                 <div class="bg-neutral-900/30 border border-white/5 p-8 rounded-2xl space-y-6">
                     <p class="text-neutral-400 font-light">
@@ -216,16 +230,16 @@
 
     <!-- Solutions by Operational Role -->
     <section class="py-24 px-6 relative overflow-hidden">
-        <div class="glow-point top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-50"></div>
+        <div class="glow-point top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-50 reveal-up scroll-element"></div>
         <div class="max-w-7xl mx-auto">
-            <div class="mb-16">
+            <div class="mb-16 reveal-up scroll-element">
                 <h2 class="text-3xl md:text-4xl font-medium text-white tracking-tight mb-4">Solutions by <span class="text-[#D1C4A9]">Operational Role</span></h2>
                 <p class="text-neutral-400 font-light max-w-2xl">Tailored approaches for every layer of your logistics organization.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- For Warehouse Operations -->
-                <div class="group p-8 rounded-2xl bg-neutral-900/30 border border-white/5 hover:border-[#D1C4A9]/30 transition-all duration-300">
+                <div class="group p-8 rounded-2xl bg-neutral-900/30 border border-white/5 hover:border-[#D1C4A9]/30 transition-all duration-300 reveal-up scroll-element stagger-1">
                     <div class="w-12 h-12 rounded-lg bg-[#D1C4A9]/10 flex items-center justify-center mb-6 text-[#D1C4A9]">
                         <i data-lucide="package" class="w-6 h-6"></i>
                     </div>
@@ -246,7 +260,7 @@
                 </div>
 
                 <!-- For Transport & Dispatch Operations -->
-                <div class="group p-8 rounded-2xl bg-neutral-900/30 border border-white/5 hover:border-[#D1C4A9]/30 transition-all duration-300">
+                <div class="group p-8 rounded-2xl bg-neutral-900/30 border border-white/5 hover:border-[#D1C4A9]/30 transition-all duration-300 reveal-up scroll-element stagger-2">
                     <div class="w-12 h-12 rounded-lg bg-[#D1C4A9]/10 flex items-center justify-center mb-6 text-[#D1C4A9]">
                         <i data-lucide="truck" class="w-6 h-6"></i>
                     </div>
@@ -267,7 +281,7 @@
                 </div>
 
                 <!-- For Management & Decision Makers -->
-                <div class="group p-8 rounded-2xl bg-neutral-900/30 border border-white/5 hover:border-[#D1C4A9]/30 transition-all duration-300">
+                <div class="group p-8 rounded-2xl bg-neutral-900/30 border border-white/5 hover:border-[#D1C4A9]/30 transition-all duration-300 reveal-up scroll-element stagger-3">
                     <div class="w-12 h-12 rounded-lg bg-[#D1C4A9]/10 flex items-center justify-center mb-6 text-[#D1C4A9]">
                         <i data-lucide="bar-chart-2" class="w-6 h-6"></i>
                     </div>
@@ -294,7 +308,7 @@
     <section class="py-24 px-6 border-t border-white/5 bg-[#080808]">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <!-- How ORBYTH Works -->
-            <div>
+            <div class="reveal-up scroll-element stagger-1">
                 <h2 class="text-3xl font-medium text-white tracking-tight mb-6">How <span class="text-[#D1C4A9]">ORBYTH</span> Works</h2>
                 <div class="space-y-6 text-neutral-400 font-light">
                     <p>
@@ -324,7 +338,7 @@
             </div>
             
             <!-- Why ORBYTH -->
-            <div class="bg-neutral-900 rounded-2xl p-8 border border-white/5">
+            <div class="bg-neutral-900 rounded-2xl p-8 border border-white/5 reveal-up scroll-element stagger-2">
                 <h3 class="text-2xl font-medium text-white mb-6">Why ORBYTH</h3>
                 <p class="text-neutral-400 font-light mb-6">Organizations work with ORBYTH when they need:</p>
                 <ul class="space-y-4">
@@ -356,7 +370,7 @@
     <footer id="contact" class="pt-24 pb-12 px-6 border-t border-white/5 bg-[#080808]">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-                <div class="col-span-1 lg:col-span-2">
+                <div class="col-span-1 lg:col-span-2 reveal-up scroll-element stagger-1">
                     <div class="flex items-center gap-0.5 mb-6">
                        <img 
                            src="pics/Logo.png" 
@@ -378,7 +392,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="reveal-up scroll-element stagger-2">
                     <h4 class="text-white font-medium mb-6 text-sm">Sitemap</h4>
                     <ul class="space-y-4">
                         <li><a href="index.html#services" class="text-neutral-500 hover:text-[#D1C4A9] text-sm font-light transition-colors">Solutions</a></li>
@@ -387,7 +401,7 @@
                     </ul>
                 </div>
 
-                <div>
+                <div class="reveal-up scroll-element stagger-3">
                     <h4 class="text-white font-medium mb-6 text-sm">Contact</h4>
                     <ul class="space-y-4">
                         <li class="flex items-center gap-2 text-neutral-500 text-sm font-light">
@@ -404,7 +418,7 @@
                 </div>
             </div>
 
-            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 reveal-up scroll-element" style="transition-delay: 0.6s;">
                 <p class="text-neutral-600 text-xs font-light">
                     © 2025 ORBYTH. All rights reserved.
                 </p>
@@ -434,16 +448,12 @@
             const icon = mobileBtn.querySelector('i');
             
             if (isMenuOpen) {
-                // Open Menu: Add height and opacity
                 mobileMenu.classList.remove('max-h-0', 'opacity-0');
                 mobileMenu.classList.add('max-h-screen', 'opacity-100');
-                // Optional: Change icon to X
                 if(icon) icon.setAttribute('data-lucide', 'x');
             } else {
-                // Close Menu
                 mobileMenu.classList.remove('max-h-screen', 'opacity-100');
                 mobileMenu.classList.add('max-h-0', 'opacity-0');
-                // Optional: Change icon back to Menu
                 if(icon) icon.setAttribute('data-lucide', 'menu');
             }
             lucide.createIcons();
@@ -465,33 +475,70 @@
         window.addEventListener('scroll', () => {
             const currentScrollY = window.scrollY;
 
-            // Only act if not at the very top
             if (currentScrollY > 10) {
-                // Determine direction
                 if (currentScrollY > lastScrollY) {
-                    // Scrolling DOWN
-                    if (!isMenuOpen) { // Don't hide if menu is open
+                    if (!isMenuOpen) {
                         navbar.classList.add('-translate-y-full');
                     }
-                    // Style updates (Compact mode)
                     navbar.classList.remove('backdrop-blur-xl', 'bg-[#050505]/40', 'py-5');
                     navbar.classList.add('backdrop-blur-3xl', 'bg-[#050505]/50', 'border-white/5', 'py-3');
                     navbar.classList.remove('border-transparent');
                 } else {
-                    // Scrolling UP
                     navbar.classList.remove('-translate-y-full');
-                    
-                    // Style updates (Keep compact)
                     navbar.classList.remove('backdrop-blur-3xl', 'bg-[#050505]/50');
                     navbar.classList.add('backdrop-blur-xl', 'bg-[#050505]/40', 'py-3');
                 }
             } else {
-                // At Top (Reset)
                 navbar.classList.remove('-translate-y-full');
                 navbar.classList.remove('backdrop-blur-3xl', 'backdrop-blur-xl', 'bg-[#050505]/50', 'bg-[#050505]/40', 'border-white/5', 'py-3');
                 navbar.classList.add('border-transparent', 'py-5');
             }
             lastScrollY = currentScrollY;
+        });
+
+        // Vloeiende Reveal Animaties (voor elementen die direct zichtbaar moeten zijn)
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelectorAll('.hero-element').forEach(el => {
+                    el.classList.add('is-revealed');
+                });
+            }, 100);
+        });
+
+        // Intersection Observer voor alle scroll elementen
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                const el = entry.target;
+                if (entry.isIntersecting) {
+                    // Bereken extra delay voor staggered items
+                    let delay = 0;
+                    if (el.classList.contains('stagger-1')) delay = 100;
+                    if (el.classList.contains('stagger-2')) delay = 300;
+                    if (el.classList.contains('stagger-3')) delay = 500;
+                    if (el.classList.contains('stagger-4')) delay = 700;
+                    if (el.classList.contains('stagger-5')) delay = 900;
+
+                    setTimeout(() => {
+                        el.classList.add('is-revealed');
+                    }, delay);
+                    
+                } else {
+                    // Reset de animatie ENKEL als het element aan de onderkant uit beeld verdwijnt
+                    if (entry.boundingClientRect.top > 0) {
+                        el.classList.remove('is-revealed');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-element').forEach(el => {
+            observer.observe(el);
         });
 
     </script>
