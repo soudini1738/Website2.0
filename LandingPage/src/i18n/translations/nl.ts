@@ -49,7 +49,7 @@ export const nl = {
       builtOn: "Gebouwd op platformen die u al vertrouwt",
       stats: [
         { value: 12, prefix: "", suffix: "+", unit: "u / week", label: "teruggewonnen" },
-        { value: 90, prefix: "", suffix: "%", unit: "", label: "oplossingsgraad" },
+        { value: 92, prefix: "", suffix: "%", unit: "", label: "oplossingsgraad" },
         { value: 6, prefix: "<", suffix: "", unit: "weken", label: "tot uw eerste automatisering in productie" },
       ],
     },
@@ -142,14 +142,14 @@ export const nl = {
     },
 
     outcomes: {
-      kicker: "Resultaten",
+      kicker: "Het Resultaat",
       title: "Gemeten in uren, niet in beloftes",
       quote: "Wij verkopen geen software. Wij nemen een taak van uw bord en geven u de uren terug.",
       quoteAttribution: "Het ORBYTH-principe",
       items: [
         {
           title: "Focus",
-          body: "Uw specialisten besteden hun week aan werk dat oordeel vraagt — niet aan het verplaatsen van data.",
+          body: "Uw specialisten besteden hun week aan werk dat oordeel vraagt, niet aan het verplaatsen van data.",
         },
         {
           title: "Betrouwbaarheid",
@@ -174,7 +174,7 @@ export const nl = {
         {
           question: "Hebben we technisch personeel nodig?",
           answer:
-            "Nee. Wij bouwen, hosten en onderhouden alles. Uw team heeft geen enkele technische kennis nodig — als u de taak kunt beschrijven, kunnen wij ze automatiseren.",
+            "Nee. Wij bouwen, hosten en onderhouden alles. Uw team heeft geen enkele technische kennis nodig, als u de taak kunt beschrijven, kunnen wij ze automatiseren.",
         },
         {
           question: "Wat kost het?",

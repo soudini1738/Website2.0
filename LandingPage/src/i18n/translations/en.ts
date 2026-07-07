@@ -47,7 +47,7 @@ export const en = {
       builtOn: "Built on platforms you already trust",
       stats: [
         { value: 12, prefix: "", suffix: "+", unit: "hrs / week", label: "returned" },
-        { value: 90, prefix: "", suffix: "%", unit: "", label: "resolution rate" },
+        { value: 92, prefix: "", suffix: "%", unit: "", label: "resolution rate" },
         { value: 6, prefix: "<", suffix: "", unit: "weeks", label: "to your first automation in production" },
       ],
     },
@@ -140,14 +140,14 @@ export const en = {
     },
 
     outcomes: {
-      kicker: "Outcomes",
+      kicker: "The Outcome",
       title: "Measured in hours, not promises",
       quote: "We don't sell software. We take a task off your plate and give you the hours back.",
       quoteAttribution: "The ORBYTH principle",
       items: [
         {
           title: "Focus",
-          body: "Your specialists spend their week on work that needs judgment — not on moving data around.",
+          body: "Your specialists spend their week on work that needs judgment, not on moving data around.",
         },
         {
           title: "Reliability",
@@ -172,7 +172,7 @@ export const en = {
         {
           question: "Do we need technical staff?",
           answer:
-            "No. We build, host and maintain everything. Your team needs zero technical knowledge — if you can describe the task, we can automate it.",
+            "No. We build, host and maintain everything. Your team needs zero technical knowledge, if you can describe the task, we can automate it.",
         },
         {
           question: "What does it cost?",

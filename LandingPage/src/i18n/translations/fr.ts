@@ -49,7 +49,7 @@ export const fr = {
       builtOn: "Construit sur des plateformes que vous connaissez déjà",
       stats: [
         { value: 12, prefix: "", suffix: "+", unit: "h / semaine", label: "récupérées" },
-        { value: 90, prefix: "", suffix: "%", unit: "", label: "taux de résolution" },
+        { value: 92, prefix: "", suffix: "%", unit: "", label: "taux de résolution" },
         { value: 6, prefix: "<", suffix: "", unit: "semaines", label: "avant votre première automatisation en production" },
       ],
     },
@@ -142,14 +142,14 @@ export const fr = {
     },
 
     outcomes: {
-      kicker: "Résultats",
+      kicker: "Le résultat",
       title: "Mesurés en heures, pas en promesses",
       quote: "Nous ne vendons pas de logiciel. Nous vous déchargeons d'une tâche et vous rendons les heures.",
       quoteAttribution: "Le principe ORBYTH",
       items: [
         {
           title: "Concentration",
-          body: "Vos spécialistes consacrent leur semaine au travail qui demande du jugement — pas au déplacement de données.",
+          body: "Vos spécialistes consacrent leur semaine au travail qui demande du jugement, pas au déplacement de données.",
         },
         {
           title: "Fiabilité",
@@ -174,7 +174,7 @@ export const fr = {
         {
           question: "Avons-nous besoin de personnel technique ?",
           answer:
-            "Non. Nous construisons, hébergeons et entretenons tout. Votre équipe n'a besoin d'aucune connaissance technique — si vous pouvez décrire la tâche, nous pouvons l'automatiser.",
+            "Non. Nous construisons, hébergeons et entretenons tout. Votre équipe n'a besoin d'aucune connaissance technique, si vous pouvez décrire la tâche, nous pouvons l'automatiser.",
         },
         {
           question: "Combien cela coûte-t-il ?",

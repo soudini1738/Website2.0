@@ -1,7 +1,7 @@
 [build]
   base = "LandingPage"
   command = "npm run build"
-  publish = "LandingPage/dist"
+  publish = "dist"
 
 [[redirects]]
   from = "/*"
