@@ -35,9 +35,9 @@ export const nl = {
   home: {
     hero: {
       kicker: "AI-automatisering voor kmo's",
-      title: "Wij installeren AI-systemen die problemen oplossen voor bedrijven en een hefboomeffect creëren.",
+      title: "Wij installeren AI-systemen die problemen oplossen voor bedrijven en een hefboom creëren.",
       subline:
-        "ORBYTH ontwerpt en beheert AI-systemen die problemen oplossen voor bedrijven en een hefboomeffect creëren. Uw team wint elke week uren terug, en fouten bereiken uw klanten niet meer.",
+        "ORBYTH ontwerpt en beheert AI-systemen die problemen oplossen voor bedrijven en een hefboom creëren. Uw team wint elke week uren terug, en fouten bereiken uw klanten niet meer.",
       ctaPrimary: "Plan een gratis automatiseringsaudit",
       ctaSecondary: "Zo werken we",
       diagramTasks: ["Facturen", "Mailbox", "Data-invoer", "Rapporten", "Planning"],

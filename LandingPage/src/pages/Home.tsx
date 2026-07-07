@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { ArrowDown, ArrowRight } from "lucide-react"
 
@@ -28,6 +28,7 @@ export function Home() {
   const { t } = useI18n()
   const location = useLocation()
   const heroRevealed = useLoadReveal()
+  const [openFaqItems, setOpenFaqItems] = useState<string[]>([])
 
   usePageMeta(t.meta.home.title, t.meta.home.description)
 
@@ -196,9 +197,13 @@ export function Home() {
       {/* 7 — FAQ */}
       <Section kicker={t.home.faq.kicker} title={t.home.faq.title}>
         <Reveal className="max-w-3xl">
-          <Accordion>
+          <Accordion value={openFaqItems} onValueChange={setOpenFaqItems}>
             {t.home.faq.items.map((item) => (
-              <AccordionItem key={item.question} value={item.question}>
+              <AccordionItem
+                key={item.question}
+                value={item.question}
+                onMouseEnter={() => setOpenFaqItems([item.question])}
+              >
                 <AccordionTrigger className="font-display py-5 text-base font-semibold md:text-lg">
                   {item.question}
                 </AccordionTrigger>
