@@ -1,0 +1,241 @@
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@theme inline {
+    --font-sans: 'Geist Variable', system-ui, sans-serif;
+    --font-display: 'Geist Variable', system-ui, sans-serif;
+    --font-mono: 'Geist Mono Variable', ui-monospace, monospace;
+    --color-paper: var(--paper);
+    --color-ink: var(--ink);
+    --color-stone: var(--stone);
+    --color-gold: var(--gold);
+    --color-bronze: var(--bronze);
+    --color-line: var(--line);
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+    /* The Orbit System — paper, ink, stone, gold, bronze, line */
+    --paper: #FCFBF8;
+    --ink: #17140E;
+    --stone: #6B655A;
+    --gold: #D1C4A9;
+    --bronze: #7A6B47;
+    --line: rgba(23, 20, 14, 0.1);
+
+    --background: var(--paper);
+    --foreground: var(--ink);
+    --card: #ffffff;
+    --card-foreground: var(--ink);
+    --popover: #ffffff;
+    --popover-foreground: var(--ink);
+    --primary: var(--ink);
+    --primary-foreground: var(--paper);
+    --secondary: rgba(209, 196, 169, 0.16);
+    --secondary-foreground: var(--ink);
+    --muted: rgba(23, 20, 14, 0.04);
+    --muted-foreground: var(--stone);
+    --accent: rgba(209, 196, 169, 0.2);
+    --accent-foreground: var(--ink);
+    --destructive: oklch(0.505 0.19 27.5);
+    --border: var(--line);
+    --input: rgba(23, 20, 14, 0.14);
+    --ring: var(--bronze);
+    --chart-1: var(--gold);
+    --chart-2: var(--bronze);
+    --chart-3: var(--stone);
+    --chart-4: var(--ink);
+    --chart-5: var(--line);
+    --radius: 0.375rem;
+    --sidebar: var(--paper);
+    --sidebar-foreground: var(--ink);
+    --sidebar-primary: var(--ink);
+    --sidebar-primary-foreground: var(--paper);
+    --sidebar-accent: rgba(209, 196, 169, 0.2);
+    --sidebar-accent-foreground: var(--ink);
+    --sidebar-border: var(--line);
+    --sidebar-ring: var(--bronze);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+  html {
+    @apply font-sans scroll-smooth;
+    }
+  ::selection {
+    background-color: var(--gold);
+    color: var(--ink);
+    }
+  :focus-visible {
+    outline: 2px solid var(--bronze);
+    outline-offset: 2px;
+    }
+}
+
+/* ---- Typography roles ---- */
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bronze);
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- Motion ---- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero orbit ring draws itself in once on load */
+@keyframes orbit-draw {
+  from { stroke-dashoffset: var(--orbit-circumference, 1000); }
+  to { stroke-dashoffset: 0; }
+}
+.orbit-draw {
+  animation: orbit-draw 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+/* Satellite dot travels the hero orbit */
+@keyframes orbit-travel {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.orbit-travel {
+  animation: orbit-travel 24s linear infinite;
+  transform-origin: center;
+  transform-box: view-box;
+}
+
+/* Navbar logo pops from small to full size on every page load */
+@keyframes logo-pop {
+  from { scale: 0.4; opacity: 0; }
+  to { scale: 1; opacity: 1; }
+}
+.logo-pop {
+  animation: logo-pop 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* Navbar wordmark expands in on every page load (orbyth.com treatment, in bronze),
+   in sync with the logo pop */
+@keyframes wordmark-expand {
+  from { max-width: 0; opacity: 0; transform: translateX(-10px); }
+  to { max-width: 7.5em; opacity: 1; transform: translateX(0); }
+}
+.wordmark-reveal {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 0;
+  opacity: 0;
+  animation: wordmark-expand 2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* Process arc: hairline base, gold overlay draws in, nodes fill as they activate */
+.orbit-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.is-revealed .orbit-path {
+  stroke-dashoffset: 0;
+}
+.orbit-node {
+  fill: var(--paper);
+  transition: fill 0.5s ease;
+}
+.is-revealed .orbit-node {
+  fill: var(--bronze);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .orbit-draw,
+  .orbit-travel {
+    animation: none;
+  }
+  .wordmark-reveal {
+    animation: none;
+    max-width: none;
+    opacity: 1;
+    transform: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

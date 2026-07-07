@@ -1,0 +1,7 @@
+export const CONTACT_EMAIL = "info@orbyth.com"
+export const CONTACT_PHONE = "+32 495 75 02 36"
+export const CONTACT_PHONE_TEL = "tel:+32495750236"
+export const CALENDLY_URL = "https://calendly.com/orbyth-info/intro"
+export const LINKEDIN_URL = "https://www.linkedin.com/company/orbyth"
+export const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit"
+export const WEB3FORMS_ACCESS_KEY = "9c5166c9-393f-4dbe-a3fd-4b0cbb375130"
