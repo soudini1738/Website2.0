@@ -5,7 +5,7 @@ import type { Messages } from "../types"
 export const fr = {
   meta: {
     home: {
-      title: "ORBYTH — Automatisation IA pour PME",
+      title: "ORBYTH | Your Unfair Advantage",
       description:
         "ORBYTH conçoit et gère des automatisations IA qui prennent en charge les tâches répétitives des PME — regagnez des heures chaque semaine et empêchez les erreurs d'atteindre vos clients.",
     },

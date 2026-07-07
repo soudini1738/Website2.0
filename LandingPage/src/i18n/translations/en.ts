@@ -3,7 +3,7 @@
 export const en = {
   meta: {
     home: {
-      title: "ORBYTH — AI automation for SMEs",
+      title: "ORBYTH | Your Unfair Advantage",
       description:
         "ORBYTH designs and runs AI automations that take over repetitive tasks for SMEs — win back hours every week and stop errors from reaching your customers.",
     },
