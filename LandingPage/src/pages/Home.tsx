@@ -203,6 +203,9 @@ export function Home() {
                 key={item.question}
                 value={item.question}
                 onMouseEnter={() => setOpenFaqItems([item.question])}
+                onMouseLeave={() =>
+                  setOpenFaqItems((items) => items.filter((q) => q !== item.question))
+                }
               >
                 <AccordionTrigger className="font-display py-5 text-base font-semibold md:text-lg">
                   {item.question}
