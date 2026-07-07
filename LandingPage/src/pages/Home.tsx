@@ -199,11 +199,7 @@ export function Home() {
         <Reveal className="max-w-3xl">
           <Accordion value={openFaqItems} onValueChange={setOpenFaqItems}>
             {t.home.faq.items.map((item) => (
-              <AccordionItem
-                key={item.question}
-                value={item.question}
-                onMouseEnter={() => setOpenFaqItems([item.question])}
-              >
+              <AccordionItem key={item.question} value={item.question}>
                 <AccordionTrigger className="font-display py-5 text-base font-semibold md:text-lg">
                   {item.question}
                 </AccordionTrigger>
