@@ -10,7 +10,8 @@
 - **Architecture:** React 19 SPA (Vite 6 + React Router 7), no backend/database logic.
 - **Component system:** shadcn/ui (`base-nova` preset on @base-ui/react), TypeScript, Tailwind CSS v4 (theme via `@theme inline` in `src/index.css`).
 - **Icons:** `lucide-react`. **Fonts:** self-hosted via Fontsource (imported in `src/main.tsx`).
-- **Package manager:** npm. **Deployment:** GitHub & Netlify (`netlify.toml` at repo root: build from `LandingPage/`, publish `LandingPage/dist`, SPA redirect).
+- **Package manager:** npm. **Deployment:** GitHub & Netlify (`netlify.toml` at repo root: `base = "LandingPage"`, `publish = "dist"`, SPA redirect).
+  - ⚠️ **Netlify publish path is resolved RELATIVE TO `base`, not the repo root.** With `base = "LandingPage"` the publish value must be `dist` — never `LandingPage/dist` (that resolves to `LandingPage/LandingPage/dist` and fails with "Deploy directory does not exist"). This mistake has broken deploys twice; do not "fix" the path by prefixing the base.
 - **Contact:** Web3Forms (endpoint + access key in `src/lib/constants.ts`) and Calendly.
 
 ## Design System — "The Orbit System"
