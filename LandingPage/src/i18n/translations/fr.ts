@@ -83,19 +83,19 @@ export const fr = {
         {
           label: "Admin",
           title: "Flux administratifs",
-          body: "Approbations, bons de commande et documents d'onboarding — acheminés, complétés et classés sans la moindre étape manuelle.",
+          body: "Approbations, bons de commande et documents d'onboarding, acheminés, complétés et classés sans la moindre étape manuelle.",
           examples: ["Bons de commande", "Chaînes d'approbation", "Onboarding des collaborateurs"],
         },
         {
           label: "Données",
           title: "Saisie & synchronisation de données",
-          body: "Une seule source de vérité. Nous connectons votre CRM, votre ERP et vos tableurs pour que les données circulent d'elles-mêmes — avec précision, instantanément, dans les deux sens.",
+          body: "Une seule source de vérité. Nous connectons votre CRM, votre ERP et vos tableurs pour que les données circulent d'elles-mêmes, avec précision, instantanément, dans les deux sens.",
           examples: ["Synchronisation CRM–ERP", "Traitement des commandes", "Entretien des données de référence"],
         },
         {
           label: "Clients",
           title: "Suivi client & communication",
-          body: "Devis relancés, rendez-vous confirmés, questions traitées — vos clients reçoivent une réponse immédiate, à chaque fois.",
+          body: "Devis relancés, rendez-vous confirmés, questions traitées, vos clients reçoivent une réponse immédiate, à chaque fois.",
           examples: ["Relance de devis", "Rappels de rendez-vous", "Tri de la boîte mail"],
         },
         {
@@ -107,7 +107,7 @@ export const fr = {
         {
           label: "Finance",
           title: "Facturation",
-          body: "Les factures entrantes sont capturées, rapprochées et comptabilisées automatiquement — et les sortantes envoyées et relancées sans que personne ne touche un tableur.",
+          body: "Les factures entrantes sont capturées, rapprochées et comptabilisées automatiquement, et les sortantes envoyées et relancées sans que personne ne touche un tableur.",
           examples: ["Capture de factures", "Rappels de paiement", "Traitement des notes de frais"],
         },
       ],
@@ -116,7 +116,7 @@ export const fr = {
     process: {
       kicker: "Processus",
       title: "De l'audit au système opérationnel en quelques semaines",
-      standfirst: "Un parcours fixe avec un livrable à chaque étape — vous savez toujours où vous en êtes.",
+      standfirst: "Un parcours fixe avec un livrable à chaque étape, vous savez toujours où vous en êtes.",
       steps: [
         {
           title: "Audit",
@@ -125,7 +125,7 @@ export const fr = {
         },
         {
           title: "Conception",
-          body: "Nous concevons le flux de travail autour de la façon dont votre équipe travaille réellement — et non l'inverse.",
+          body: "Nous concevons le flux de travail autour de la façon dont votre équipe travaille réellement, et non l'inverse.",
           deliverable: "Livrable : un plan validé avec un périmètre fixe.",
         },
         {

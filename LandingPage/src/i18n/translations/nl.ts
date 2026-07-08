@@ -66,11 +66,11 @@ export const nl = {
         },
         {
           title: "Fouten",
-          body: "Handmatige fouten blijven vaak onopgemerkt tot ze later een proces breken — en uw team moet stoppen, de fout traceren en de rommel opruimen.",
+          body: "Handmatige fouten blijven vaak onopgemerkt tot ze later een proces breken, en uw team moet stoppen, de fout traceren en de rommel opruimen.",
         },
         {
           title: "Groei",
-          body: "Meer klanten binnenhalen mag niet betekenen dat uw team verzuipt. Uw bedrijf moet meer werk aankunnen met het team dat u al hebt.",
+          body: "Meer klanten binnenhalen mag niet betekenen dat uw team verdrinkt. Uw bedrijf moet meer werk aankunnen met het team dat u al hebt.",
         },
       ],
     },
@@ -83,19 +83,19 @@ export const nl = {
         {
           label: "Admin",
           title: "Administratieve workflows",
-          body: "Goedkeuringen, bestelbonnen en onboardingdocumenten — doorgestuurd, ingevuld en geklasseerd zonder één handmatige stap.",
+          body: "Goedkeuringen, bestelbonnen en onboardingdocumenten, doorgestuurd, ingevuld en geklasseerd zonder één handmatige stap.",
           examples: ["Bestelbonnen", "Goedkeuringsflows", "Onboarding van medewerkers"],
         },
         {
           label: "Data",
           title: "Data-invoer & synchronisatie",
-          body: "Eén bron van waarheid. Wij verbinden uw CRM, ERP en spreadsheets zodat data zichzelf verplaatst — correct, meteen, in beide richtingen.",
+          body: "Eén bron van waarheid. Wij verbinden uw CRM, ERP en spreadsheets zodat data zichzelf verplaatst, correct en meteen, in beide richtingen.",
           examples: ["CRM–ERP-synchronisatie", "Orderverwerking", "Onderhoud van stamdata"],
         },
         {
           label: "Klanten",
           title: "Klantopvolging & communicatie",
-          body: "Offertes opgevolgd, afspraken bevestigd, vragen beantwoord — uw klanten krijgen meteen een antwoord, elke keer opnieuw.",
+          body: "Offertes opgevolgd, afspraken bevestigd, vragen beantwoord, uw klanten krijgen meteen een antwoord, elke keer opnieuw.",
           examples: ["Offerteopvolging", "Afspraakherinneringen", "Inbox-triage"],
         },
         {
@@ -107,7 +107,7 @@ export const nl = {
         {
           label: "Financiën",
           title: "Facturatie",
-          body: "Inkomende facturen automatisch ingelezen, gematcht en geboekt — en uitgaande facturen verstuurd en opgevolgd zonder dat iemand een spreadsheet aanraakt.",
+          body: "Inkomende facturen automatisch ingelezen, gematcht en geboekt, en uitgaande facturen verstuurd en opgevolgd zonder dat iemand een spreadsheet aanraakt.",
           examples: ["Factuurinlezing", "Betalingsherinneringen", "Onkostenverwerking"],
         },
       ],
@@ -116,7 +116,7 @@ export const nl = {
     process: {
       kicker: "Proces",
       title: "Van audit naar draaiend systeem in enkele weken",
-      standfirst: "Een vast traject met een resultaat na elke stap — u weet altijd waar u staat.",
+      standfirst: "Een vast traject met een resultaat na elke stap, u weet altijd waar u staat.",
       steps: [
         {
           title: "Audit",
@@ -125,7 +125,7 @@ export const nl = {
         },
         {
           title: "Ontwerp",
-          body: "We ontwerpen de workflow rond hoe uw team écht werkt — niet omgekeerd.",
+          body: "We ontwerpen de workflow rond hoe uw team écht werkt, niet omgekeerd.",
           deliverable: "Resultaat: een gevalideerde blauwdruk met vaste scope.",
         },
         {
