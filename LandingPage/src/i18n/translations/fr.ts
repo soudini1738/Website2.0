@@ -30,6 +30,7 @@ export const fr = {
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
     skipToContent: "Aller au contenu",
+    backToTop: "Retour en haut",
   },
 
   home: {

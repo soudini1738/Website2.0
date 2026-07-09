@@ -28,6 +28,7 @@ export const en = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     skipToContent: "Skip to content",
+    backToTop: "Back to top",
   },
 
   home: {

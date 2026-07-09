@@ -30,6 +30,7 @@ export const nl = {
     openMenu: "Menu openen",
     closeMenu: "Menu sluiten",
     skipToContent: "Naar inhoud",
+    backToTop: "Terug naar boven",
   },
 
   home: {
