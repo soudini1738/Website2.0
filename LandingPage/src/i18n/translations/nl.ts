@@ -48,11 +48,6 @@ export const nl = {
 
     proof: {
       builtOn: "Gebouwd op platformen die u al vertrouwt",
-      stats: [
-        { value: 12, prefix: "", suffix: "+", unit: "u / week", label: "teruggewonnen" },
-        { value: 92, prefix: "", suffix: "%", unit: "", label: "oplossingsgraad" },
-        { value: 6, prefix: "<", suffix: "", unit: "weken", label: "tot uw eerste automatisering in productie" },
-      ],
     },
 
     problem: {

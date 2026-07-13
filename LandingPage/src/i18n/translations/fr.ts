@@ -48,11 +48,6 @@ export const fr = {
 
     proof: {
       builtOn: "Construit sur des plateformes que vous connaissez déjà",
-      stats: [
-        { value: 12, prefix: "", suffix: "+", unit: "h / semaine", label: "récupérées" },
-        { value: 92, prefix: "", suffix: "%", unit: "", label: "taux de résolution" },
-        { value: 6, prefix: "<", suffix: "", unit: "semaines", label: "avant votre première automatisation en production" },
-      ],
     },
 
     problem: {
