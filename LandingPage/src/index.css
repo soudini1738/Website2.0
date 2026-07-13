@@ -212,6 +212,15 @@
   fill: var(--bronze);
 }
 
+/* Partner-logo marquee: track scrolls exactly one duplicated copy's width */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee-scroll 30s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -222,7 +231,8 @@
     transition: none;
   }
   .orbit-draw,
-  .orbit-travel {
+  .orbit-travel,
+  .animate-marquee {
     animation: none;
   }
   .wordmark-reveal {

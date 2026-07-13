@@ -11,18 +11,28 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { CtaBand } from "@/components/CtaBand"
+import { Marquee } from "@/components/Marquee"
 import { OrbitDiagram } from "@/components/OrbitDiagram"
 import { ProcessSteps } from "@/components/ProcessSteps"
 import { Reveal } from "@/components/Reveal"
 import { Section } from "@/components/Section"
-import { Stat } from "@/components/Stat"
 import { useLoadReveal } from "@/hooks/useRevealOnScroll"
 import { usePageMeta } from "@/hooks/usePageMeta"
 import { useI18n } from "@/i18n/useI18n"
 
-// Wordmarks instead of image logos: the existing PNG assets are white-on-transparent
-// (made for the old dark design) and unusable on paper. Swap in SVGs when available.
-const PLATFORMS = ["Microsoft", "Salesforce", "AWS", "Workato", "n8n"]
+// Simple Icons doesn't carry Microsoft or Workato (trademark / not listed), and the
+// local PNGs for those two are white-on-transparent (made for the old dark design) —
+// so those two render as styled text instead of an icon, in --ink like the rest.
+const PARTNERS: { name: string; iconSrc?: string; fontFamily?: string }[] = [
+  { name: "n8n", iconSrc: "https://cdn.simpleicons.org/n8n/17140E" },
+  { name: "Microsoft", fontFamily: "'Segoe UI', sans-serif" },
+  { name: "Google Cloud", iconSrc: "https://cdn.simpleicons.org/googlecloud/17140E" },
+  { name: "Workato", fontFamily: "sans-serif" },
+  { name: "Salesforce", iconSrc: "/pics/salesforceLogo-removebg-preview.png" },
+  { name: "Okta", iconSrc: "https://cdn.simpleicons.org/okta/17140E" },
+  { name: "GitHub", iconSrc: "https://cdn.simpleicons.org/github/17140E" },
+  { name: "SAP", iconSrc: "https://cdn.simpleicons.org/sap/17140E" },
+]
 
 export function Home() {
   const { t } = useI18n()
@@ -89,24 +99,27 @@ export function Home() {
         </div>
       </section>
 
-      {/* 2 — Proof strip: platforms + quantified outcomes */}
+      {/* 2 — Proof strip: platforms */}
       <section className="border-t border-line">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-14 lg:grid-cols-2 lg:items-center">
+        <div className="mx-auto max-w-6xl px-6 py-14">
           <Reveal>
-            <p className="kicker">{t.home.proof.builtOn}</p>
-            <ul className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-3">
-              {PLATFORMS.map((platform) => (
-                <li key={platform} className="font-display text-lg font-semibold text-stone/80">
-                  {platform}
-                </li>
+            <p className="kicker text-center">{t.home.proof.builtOn}</p>
+            <Marquee className="mt-6">
+              {PARTNERS.map((partner) => (
+                <div key={partner.name} className="flex shrink-0 items-center gap-2.5 opacity-60 grayscale transition hover:opacity-100 hover:grayscale-0">
+                  {partner.iconSrc && (
+                    <img src={partner.iconSrc} alt="" className="h-6 w-auto" />
+                  )}
+                  <span
+                    className="font-display text-lg font-semibold whitespace-nowrap text-ink"
+                    style={partner.fontFamily ? { fontFamily: partner.fontFamily } : undefined}
+                  >
+                    {partner.name}
+                  </span>
+                </div>
               ))}
-            </ul>
+            </Marquee>
           </Reveal>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-            {t.home.proof.stats.map((stat, i) => (
-              <Stat key={stat.label} {...stat} stagger={i + 1} />
-            ))}
-          </div>
         </div>
       </section>
 

@@ -13,9 +13,9 @@ export const en = {
         "ORBYTH is an Antwerp-based AI automation firm for SMEs across every sector. We engineer automations, integrate them into your business and keep them running.",
     },
     contact: {
-      title: "Contact ORBYTH — plan a free automation audit",
+      title: "Contact ORBYTH — plan a free audit",
       description:
-        "Tell us what eats your team's time. Plan a free automation audit or book a 30-minute intro call with ORBYTH.",
+        "Tell us what eats your team's time. Plan a free audit or book a 30-minute intro call with ORBYTH.",
     },
   },
 
@@ -37,7 +37,7 @@ export const en = {
       title: "Installing AI systems to solve problems for businesses and creating leverage",
       subline:
         "ORBYTH designs and runs AI systems that solve problems for businesses and create leverage. Your team wins back hours every week, and errors stop reaching your customers.",
-      ctaPrimary: "Plan a free automation audit",
+      ctaPrimary: "Plan a free audit",
       ctaSecondary: "See how we work",
       diagramTasks: ["Invoices", "Mailbox", "Data entry", "Reports", "Scheduling"],
       diagramLabel:
@@ -45,12 +45,7 @@ export const en = {
     },
 
     proof: {
-      builtOn: "Built on platforms you already trust",
-      stats: [
-        { value: 12, prefix: "", suffix: "+", unit: "hrs / week", label: "returned" },
-        { value: 92, prefix: "", suffix: "%", unit: "", label: "resolution rate" },
-        { value: 6, prefix: "<", suffix: "", unit: "weeks", label: "to your first automation in production" },
-      ],
+      builtOn: "Built on platforms you already trust",    
     },
 
     problem: {

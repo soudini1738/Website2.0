@@ -3,7 +3,7 @@
 ## Project Overview
 - **Company Name:** ORBYTH
 - **Core Business:** AI automation for SMEs — we design, build and run automations that take over repetitive tasks (fewer hours lost, fewer errors).
-- **Target Audience:** All SMEs (kmo's), every sector. B2B, premium positioning.
+- **Target Audience:** SMEs (kmo's) in transport & logistics specifically — not all sectors. B2B, premium positioning.
 - **Tone & Style:** Premium, direct, authoritative. Sentence case, active voice, no exclamation marks. Dutch copy uses formal "u" and Flemish vocabulary ("kmo's").
 
 ## Tech Stack & Architecture
