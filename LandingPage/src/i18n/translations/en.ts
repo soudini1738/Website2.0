@@ -110,7 +110,7 @@ export const en = {
     process: {
       kicker: "Process",
       title: "From audit to running system in weeks",
-      standfirst: "A fixed path with a deliverable at every step — you always know where you stand.",
+      standfirst: "A fixed path with a deliverable at every step, you always know where you stand.",
       steps: [
         {
           title: "Audit",
@@ -119,7 +119,7 @@ export const en = {
         },
         {
           title: "Design",
-          body: "We design the workflow around how your team actually works — not the other way round.",
+          body: "We design the workflow around how your team actually works, not the other way round.",
           deliverable: "Deliverable: a validated blueprint with a fixed scope.",
         },
         {
