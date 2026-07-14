@@ -10,12 +10,12 @@ export const fr = {
         "ORBYTH conçoit et gère des automatisations IA qui prennent en charge les tâches répétitives des PME — regagnez des heures chaque semaine et empêchez les erreurs d'atteindre vos clients.",
     },
     about: {
-      title: "À propos d'ORBYTH — nous construisons et gérons vos automatisations",
+      title: "À propos d'ORBYTH nous construisons et gérons vos automatisations",
       description:
         "ORBYTH est une société anversoise d'automatisation IA pour les PME de tous les secteurs. Nous concevons les automatisations, les intégrons dans votre entreprise et les maintenons en fonctionnement.",
     },
     contact: {
-      title: "Contactez ORBYTH — planifiez un audit d'automatisation gratuit",
+      title: "Contactez ORBYTH planifiez un audit gratuit",
       description:
         "Dites-nous ce qui dévore le temps de votre équipe. Planifiez un audit d'automatisation gratuit ou réservez un appel de 30 minutes avec ORBYTH.",
     },
@@ -43,7 +43,7 @@ export const fr = {
       ctaSecondary: "Notre méthode",
       diagramTasks: ["Factures", "Boîte mail", "Saisie de données", "Rapports", "Planification"],
       diagramLabel:
-        "Diagramme : les tâches récurrentes — factures, boîte mail, saisie de données, rapports et planification — gravitent autour d'un noyau automatisé.",
+        "Diagramme : les tâches récurrentes factures, boîte mail, saisie de données, rapports et planification gravitent autour d'un noyau automatisé.",
     },
 
     proof: {
@@ -117,22 +117,22 @@ export const fr = {
         {
           title: "Audit",
           body: "Nous cartographions vos tâches répétitives et chiffrons ce que chacune vous coûte.",
-          deliverable: "Livrable : une feuille de route d'automatisation priorisée.",
+          deliverable: "Livrable: une feuille de route d'automatisation priorisée.",
         },
         {
           title: "Conception",
           body: "Nous concevons le flux de travail autour de la façon dont votre équipe travaille réellement, et non l'inverse.",
-          deliverable: "Livrable : un plan validé avec un périmètre fixe.",
+          deliverable: "Livrable: un plan validé avec un périmètre fixe.",
         },
         {
           title: "Construction",
           body: "Nous construisons l'automatisation et l'intégrons aux outils que vous utilisez déjà.",
-          deliverable: "Livrable : un système testé, en service dans votre environnement.",
+          deliverable: "Livrable: un système testé, en service dans votre environnement.",
         },
         {
           title: "Exploitation & amélioration",
-          body: "Nous surveillons, entretenons et améliorons chaque automatisation que nous livrons. Vous obtenez les résultats ; nous faisons tourner le moteur.",
-          deliverable: "Livrable : des rapports de performance mensuels.",
+          body: "Nous surveillons, entretenons et améliorons chaque automatisation que nous livrons. Vous obtenez les résultats; nous faisons tourner le moteur.",
+          deliverable: "Livrable: des rapports de performance mensuels.",
         },
       ],
     },
@@ -247,7 +247,7 @@ export const fr = {
     },
     calendly: {
       title: "Vous préférez en parler ?",
-      body: "Réservez un appel découverte — aucune préparation nécessaire, aucun engagement.",
+      body: "Réservez un appel découverte, aucune préparation nécessaire, aucun engagement.",
       button: "Réservez un appel découverte",
     },
     form: {
@@ -255,7 +255,7 @@ export const fr = {
       name: "Nom",
       company: "Entreprise",
       email: "E-mail",
-      message: "Quel travail répétitif devrait disparaître en premier ?",
+      message: "Qu'est-ce qui ralentit votre équipe maintenant?",
       submit: "Envoyer le message",
       submitting: "Envoi…",
       successTitle: "Message bien reçu.",
@@ -263,7 +263,7 @@ export const fr = {
         "Nous revenons vers vous sous un jour ouvrable. Vous voulez aller plus vite ? Réservez directement un appel découverte.",
       successCta: "Réservez un appel découverte",
       error: "Une erreur s'est produite lors de l'envoi. Veuillez réessayer ou écrivez-nous directement à info@orbyth.com.",
-      subject: "Nouvelle demande via le site — ORBYTH",
+      subject: "Nouvelle demande via le site, ORBYTH",
     },
     reassurance: [
       { title: "Audit gratuit", body: "La première étape ne vous coûte jamais rien." },

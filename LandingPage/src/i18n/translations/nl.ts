@@ -15,7 +15,7 @@ export const nl = {
         "ORBYTH is een Antwerps AI-automatiseringsbureau voor kmo's in elke sector. Wij bouwen automatiseringen, integreren ze in uw bedrijf en houden ze draaiende.",
     },
     contact: {
-      title: "Contacteer ORBYTH — plan een gratis automatiseringsaudit",
+      title: "Contacteer ORBYTH — plan een gratis audit",
       description:
         "Vertel ons wat de tijd van uw team opslorpt. Plan een gratis automatiseringsaudit of boek een intro-gesprek van 30 minuten met ORBYTH.",
     },
@@ -43,7 +43,7 @@ export const nl = {
       ctaSecondary: "Zo werken we",
       diagramTasks: ["Facturen", "Mailbox", "Data-invoer", "Rapporten", "Planning"],
       diagramLabel:
-        "Diagram: terugkerende taken — facturen, mailbox, data-invoer, rapporten en planning — cirkelen rond één geautomatiseerde kern.",
+        "Diagram: terugkerende taken, facturen, mailbox, data-invoer, rapporten en planning, cirkelen rond één geautomatiseerde kern.",
     },
 
     proof: {
@@ -165,7 +165,7 @@ export const nl = {
         {
           question: "Hoe snel zien we resultaat?",
           answer:
-            "De meeste klanten hebben hun eerste automatisering live binnen zes weken na de audit. De audit zelf duurt één à twee weken en toont u meteen waar de grootste winst zit.",
+            "De meeste klanten hebben hun eerste automatisering live binnen zes weken na de audit. De audit zelf duurt een a twee weken en toont u meteen waar de grootste winst zit.",
         },
         {
           question: "Hebben we technisch personeel nodig?",
@@ -218,11 +218,11 @@ export const nl = {
         },
         {
           title: "Eigenaarschap van a tot z",
-          body: "Eén partner van audit tot dagelijkse werking. Als er om 7 uur 's ochtends iets hapert, is het ons probleem nog voor u het merkt.",
+          body: "Een partner van audit tot dagelijkse werking. Als er om 7 uur 's ochtends iets hapert, is het ons probleem nog voor u het merkt.",
         },
         {
           title: "Gemeten in gewonnen uren",
-          body: "Niet in opgeleverde features of verkochte licenties. Een automatisering die geen tijd opbrengt, is een mislukking — dus leveren we ze niet op.",
+          body: "Niet in opgeleverde features of verkochte licenties. Een automatisering die geen tijd opbrengt, is een mislukking, dus leveren we ze niet op.",
         },
       ],
     },
@@ -236,7 +236,7 @@ export const nl = {
   contact: {
     kicker: "Contact",
     title: "Vertel ons wat de tijd van uw team opslorpt.",
-    promise: "U krijgt binnen één werkdag antwoord.",
+    promise: "U krijgt binnen een werkdag antwoord.",
     channels: {
       email: "info@orbyth.com",
       emailLabel: "E-mail",
@@ -247,7 +247,7 @@ export const nl = {
     },
     calendly: {
       title: "Liever een gesprek?",
-      body: "Boek een intro — geen voorbereiding nodig, geen verplichtingen.",
+      body: "Boek een intro geen voorbereiding nodig, geen verplichtingen.",
       button: "Boek een intro-gesprek",
     },
     form: {
@@ -255,7 +255,7 @@ export const nl = {
       name: "Naam",
       company: "Bedrijf",
       email: "E-mailadres",
-      message: "Welk repetitief werk moet eerst verdwijnen?",
+      message: "Wat vertraagt jullie team nu?",
       submit: "Verstuur bericht",
       submitting: "Versturen…",
       successTitle: "Bericht ontvangen.",
@@ -263,7 +263,7 @@ export const nl = {
         "We nemen binnen één werkdag contact met u op. Sneller schakelen? Boek meteen een intro-gesprek.",
       successCta: "Boek een intro-gesprek",
       error: "Er ging iets mis bij het versturen. Probeer het opnieuw of mail ons rechtstreeks op info@orbyth.com.",
-      subject: "Nieuwe websiteaanvraag — ORBYTH",
+      subject: "Nieuwe websiteaanvraag, ORBYTH",
     },
     reassurance: [
       { title: "Gratis audit", body: "De eerste stap kost u nooit iets." },

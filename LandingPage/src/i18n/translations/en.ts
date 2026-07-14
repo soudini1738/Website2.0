@@ -245,7 +245,7 @@ export const en = {
     },
     calendly: {
       title: "Prefer to talk?",
-      body: "Book an intro — no preparation needed, no obligations.",
+      body: "Book an intro, no preparation needed, no obligations.",
       button: "Book an intro call",
     },
     form: {
@@ -253,7 +253,7 @@ export const en = {
       name: "Name",
       company: "Company",
       email: "Email",
-      message: "What repetitive work should disappear first?",
+      message: "What's slowing your team down now?",
       submit: "Send message",
       submitting: "Sending…",
       successTitle: "Message received.",
@@ -261,7 +261,7 @@ export const en = {
         "We'll get back to you within one business day. Want to move faster? Book an intro call right away.",
       successCta: "Book an intro call",
       error: "Something went wrong while sending. Please try again, or email us directly at info@orbyth.com.",
-      subject: "New website inquiry — ORBYTH",
+      subject: "New website inquiry, ORBYTH",
     },
     reassurance: [
       { title: "Free audit", body: "The first step never costs anything." },
