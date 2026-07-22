@@ -82,7 +82,7 @@ export function Footer() {
 
       <div className="border-t border-line">
         <p className="mx-auto max-w-6xl px-6 py-5 font-mono text-xs text-stone">
-          © {new Date().getFullYear()} ORBYTH — {t.footer.rights}
+          © {new Date().getFullYear()} ORBYTH. {t.footer.rights}
         </p>
       </div>
     </footer>

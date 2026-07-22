@@ -19,6 +19,7 @@ import { Section } from "@/components/Section"
 import { useLoadReveal } from "@/hooks/useRevealOnScroll"
 import { usePageMeta } from "@/hooks/usePageMeta"
 import { useI18n } from "@/i18n/useI18n"
+import { servicePageForCard } from "@/lib/services"
 
 // Simple Icons doesn't carry Microsoft or Workato (trademark / not listed), and the
 // local PNGs for those two are white-on-transparent (made for the old dark design) —
@@ -92,7 +93,7 @@ export function Home() {
         </div>
 
         <div
-          className={cn("reveal lg:col-span-5", heroRevealed && "is-revealed")}
+          className={cn("reveal relative z-30 lg:col-span-5", heroRevealed && "is-revealed")}
           style={{ transitionDelay: "0.35s" }}
         >
           <OrbitDiagram />
@@ -152,27 +153,50 @@ export function Home() {
         standfirst={t.home.services.standfirst}
       >
         <div className="grid gap-6 md:grid-cols-2">
-          {t.home.services.items.map((service, i) => (
-            <Reveal
-              key={service.title}
-              stagger={i + 1}
-              className="group rounded-lg border border-line border-t-2 border-t-transparent bg-card p-8 transition-colors hover:border-t-gold"
-            >
-              <p className="kicker">{service.label}</p>
-              <h3 className="font-display mt-4 text-2xl font-semibold">{service.title}</h3>
-              <p className="mt-3 leading-relaxed text-muted-foreground">{service.body}</p>
-              <ul className="mt-6 flex flex-wrap gap-2">
-                {service.examples.map((example) => (
-                  <li
-                    key={example}
-                    className="rounded-full border border-line px-3 py-1 font-mono text-xs text-stone"
+          {t.home.services.items.map((service, i) => {
+            const page = servicePageForCard(i)
+            const cardClass =
+              "group flex h-full flex-col rounded-lg border border-line border-t-2 border-t-transparent bg-card p-8 transition-colors hover:border-t-gold"
+            const cardBody = (
+              <>
+                <p className="kicker">{service.label}</p>
+                <h3 className="font-display mt-4 text-2xl font-semibold">{service.title}</h3>
+                <p className="mt-3 leading-relaxed text-muted-foreground">{service.body}</p>
+                <ul className="mt-6 flex flex-wrap gap-2">
+                  {service.examples.map((example) => (
+                    <li
+                      key={example}
+                      className="rounded-full border border-line px-3 py-1 font-mono text-xs text-stone"
+                    >
+                      {example}
+                    </li>
+                  ))}
+                </ul>
+                {page && (
+                  <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-medium text-bronze">
+                    {t.home.services.readMore}
+                    <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                )}
+              </>
+            )
+
+            return (
+              <Reveal key={service.title} stagger={i + 1} className="h-full">
+                {page ? (
+                  <Link
+                    to={`/services/${page.slug}`}
+                    state={{ fromServices: true }}
+                    className={cardClass}
                   >
-                    {example}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          ))}
+                    {cardBody}
+                  </Link>
+                ) : (
+                  <div className={cardClass}>{cardBody}</div>
+                )}
+              </Reveal>
+            )
+          })}
         </div>
       </Section>
 
