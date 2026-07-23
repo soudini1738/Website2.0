@@ -19,6 +19,11 @@ export const nl = {
       description:
         "Vertel ons wat de tijd van uw team opslorpt. Plan een gratis automatiseringsaudit of boek een intro-gesprek van 30 minuten met ORBYTH.",
     },
+    privacyPolicy: {
+      title: "Privacybeleid | ORBYTH",
+      description:
+        "Hoe ORBYTH persoonsgegevens verzamelt, gebruikt en beschermt wanneer u orbyth.com bezoekt of ons contacteert.",
+    },
     services: {
       administratie: {
         title: "Administratieve workflows automatiseren | ORBYTH",
@@ -64,10 +69,10 @@ export const nl = {
   home: {
     hero: {
       kicker: "AI-automatisering voor kmo's",
-      title: "Wij bouwen de systemen waar uw operatie écht op draait",
+      title: "Wij bouwen de systemen waar uw operatie op draait",
       subline:
         "ORBYTH is de verbindende laag tussen uw TMS, ERP en WMS. Uw team wint elke week uren terug, en fouten bereiken uw klanten niet meer.",
-      ctaPrimary: "Plan een gratis automatiseringsaudit",
+      ctaPrimary: "Plan een audit",
       ctaSecondary: "Zo werken we",
       diagramTasks: ["Facturen", "Mailbox", "Data-invoer", "Rapporten", "Planning"],
       diagramDescriptions: [
@@ -278,7 +283,7 @@ export const nl = {
         },
         cta: {
           title: "Benieuwd wat we eerst zouden automatiseren?",
-          body: "Boek een kort intro-gesprek en we overlopen samen uw administratie, geen voorbereiding nodig.",
+          body: "Boek een kort intro-gesprek en we overlopen samen uw administratie.",
         },
       },
       data: {
@@ -535,8 +540,8 @@ export const nl = {
   cta: {
     title: "Klaar om aan uw bedrijf te werken in plaats van erin?",
     body: "Tijdens een gratis audit brengen we precies in kaart waar uw bedrijf tijd verliest en tonen we hoe het juiste systeem dit oplost.",
-    button: "Plan een gratis audit",
-    secondary: "Of boek een intro-gesprek",
+    button: "Plan een audit",
+    secondary: "Of boek een gesprek",
   },
 
   footer: {
@@ -545,5 +550,110 @@ export const nl = {
     contact: "Contact",
     language: "Taal",
     rights: "Alle rechten voorbehouden.",
+    cookiePrefs: "Cookievoorkeuren wijzigen",
+    privacyPolicy: "Privacybeleid",
+  },
+
+  cookies: {
+    ariaLabel: "Cookiemelding",
+    shortBody: "We gebruiken cookies om onze site te verbeteren.",
+    body: "We gebruiken noodzakelijke cookies om onze site te laten werken. Met uw toestemming gebruiken we ook analytische cookies (Google Analytics) om te begrijpen hoe de site gebruikt wordt. U bepaalt wat we mogen gebruiken.",
+    moreInfo: "Meer info",
+    lessInfo: "Minder info",
+    accept: "Accepteren",
+    necessaryOnly: "Accepteer enkel noodzakelijke cookies",
+    reject: "Weigeren",
+    necessary: {
+      title: "Noodzakelijk",
+      body: "Nodig om de site te laten werken en om uw cookiekeuze te onthouden. Altijd actief.",
+    },
+    analytics: {
+      title: "Analytisch",
+      body: "Google Analytics helpt ons begrijpen hoe bezoekers de site gebruiken, zodat we ze kunnen verbeteren. Wordt pas geladen nadat u accepteert.",
+    },
+  },
+
+  privacyPolicy: {
+    title: "Privacybeleid",
+    intro:
+      "ORBYTH is een Belgisch bedrijf gevestigd in Antwerpen. Wij bouwen systeemintegraties en automatiseringen voor kleine en middelgrote ondernemingen (kmo's). Dit privacybeleid legt uit hoe we persoonsgegevens verzamelen, gebruiken en beschermen wanneer u orbyth.com bezoekt of ons contacteert.",
+    sections: [
+      {
+        title: "1. Verwerkingsverantwoordelijke",
+        body: "",
+        items: [
+          {
+            label: "",
+            body: "ORBYTH, Antwerpen, België",
+          },
+          {
+            label: "",
+            body: "Contact voor privacyvragen: info@orbyth.com",
+          },
+          {
+            label: "",
+            body: "Telefoonnummer: +32 495 75 02 36",
+          },
+        ],
+      },
+      {
+        title: "2. Welke gegevens we verzamelen en waarom",
+        body: "",
+        items: [
+          {
+            label: "a) Contactformulier.",
+            body: "Contactformulier. Wanneer u ons contactformulier invult, verzamelen we de gegevens die u opgeeft: naam, bedrijfsnaam, e-mailadres en uw bericht. We gebruiken deze gegevens uitsluitend om op uw vraag te reageren. Het verstrekken van deze gegevens is vrijwillig, maar zonder deze gegevens kunnen we niet op uw vraag reageren.",
+          },
+          {
+            label: "",
+            body: "Uw bericht wordt verzonden via Web3Forms, een externe dienst voor formulierverwerking gevestigd in de Verenigde Staten, die het bericht doorstuurt naar onze inbox. Web3Forms treedt op als verwerker in onze opdracht.",
+          },
+          {
+            label: "b) Een gesprek plannen (Calendly).",
+            body: "Als u doorklikt om een gesprek te boeken, verlaat u onze Site en gebruikt u Calendly, een onafhankelijke, in de VS gevestigde planningsdienst. Calendly verwerkt uw naam, e-mailadres en gekozen tijdstip als eigen verwerkingsverantwoordelijke, onder zijn eigen privacybeleid. Wij ontvangen enkel de boekingsgegevens die nodig zijn om het gesprek te kunnen voeren.",
+          },
+        ],
+      },
+      {
+        title: "3. Cookies",
+        body: "Onze Site gebruikt Google Analytics, een webanalysetool van Google, om te begrijpen hoe bezoekers de Site gebruiken. Hierbij worden cookies op uw toestel geplaatst die informatie verzamelen zoals bezochte pagina's, tijd doorgebracht op de Site en algemene locatiegegevens. Deze gegevens worden enkel verwerkt met uw toestemming, verkregen via de cookiebanner die bij uw eerste bezoek wordt getoond. U kunt uw toestemming op elk moment intrekken.",
+        items: [],
+      },
+      {
+        title: "4. Ontvangers en internationale doorgiften",
+        body: "We delen persoonsgegevens enkel met de dienstverleners die strikt noodzakelijk zijn om de Site te laten draaien en op vragen te reageren: Web3Forms (verwerking van formulieren) en Netlify (hosting), beide gevestigd in de Verenigde Staten, en Calendly (planning), eveneens gevestigd in de VS, indien u hiervan gebruikmaakt. Wanneer persoonsgegevens buiten de Europese Economische Ruimte worden doorgegeven, baseren deze dienstverleners zich op passende waarborgen zoals de standaardcontractbepalingen. We verkopen of verhuren persoonsgegevens nooit aan derden.",
+        items: [],
+      },
+      {
+        title: "5. Bewaartermijn",
+        body: "We bewaren gegevens uit het contactformulier enkel zolang als nodig om uw vraag te behandelen of, indien relevant, een lopende zakelijke relatie, tenzij een langere termijn wettelijk verplicht is. Serverlogs worden door Netlify enkel bewaard zolang als nodig voor beveiligingsdoeleinden.",
+        items: [],
+      },
+      {
+        title: "6. Uw rechten",
+        body: "Onder de AVG heeft u het recht om: inzage te krijgen in de persoonsgegevens die we over u bewaren; rectificatie van onjuiste gegevens te vragen; verwijdering van uw gegevens te vragen; de verwerking te beperken of hiertegen bezwaar te maken; en gegevensoverdraagbaarheid te vragen. Wanneer de verwerking gebaseerd is op uw toestemming, kunt u die op elk moment intrekken. Om een van deze rechten uit te oefenen, kunt u ons contacteren via info@orbyth.com.",
+        items: [
+          {
+            label: "",
+            body: "U heeft ook het recht om een klacht in te dienen bij de Belgische Gegevensbeschermingsautoriteit, Drukpersstraat 35, 1000 Brussel, België, www.gegevensbeschermingsautoriteit.be.",
+          },
+        ],
+      },
+      {
+        title: "7. Geautomatiseerde besluitvorming",
+        body: "We gebruiken geen geautomatiseerde besluitvorming of profilering die juridische gevolgen heeft of u op vergelijkbare wijze aanzienlijk treft.",
+        items: [],
+      },
+      {
+        title: "8. Wijzigingen aan dit beleid",
+        body: "We kunnen dit privacybeleid van tijd tot tijd bijwerken. De datum bovenaan geeft de meest recente herziening weer. Belangrijke wijzigingen worden op deze pagina vermeld.",
+        items: [],
+      },
+      {
+        title: "9. Contact",
+        body: "Vragen over dit beleid of over uw persoonsgegevens? Contacteer ons via info@orbyth.com of +32 495 75 02 36.",
+        items: [],
+      },
+    ],
   },
 } satisfies Messages

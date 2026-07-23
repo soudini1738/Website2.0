@@ -1,40 +1,34 @@
-import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react"
+import { useCallback, useEffect, useMemo, type ReactNode } from "react"
+import { useLocation, useNavigate } from "react-router-dom"
 
 import { I18nContext } from "./context"
+import { getLangFromPathname, localizePath, stripLangPrefix } from "./langPath"
 import { en } from "./translations/en"
 import { fr } from "./translations/fr"
 import { nl } from "./translations/nl"
 import type { Lang, Messages } from "./types"
 
-const STORAGE_KEY = "orbyth-lang"
 const DICTIONARIES: Record<Lang, Messages> = { en, nl, fr }
 
-// Stored preference wins; every first visit starts in English.
-function detectLang(): Lang {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY)
-    if (stored === "nl" || stored === "en" || stored === "fr") return stored
-  } catch {
-    // localStorage unavailable (privacy mode) — fall through to the default
-  }
-  return "en"
-}
-
+// Language is derived entirely from the URL (no prefix = English, /nl or /fr
+// otherwise) so each language has its own crawlable, indexable address.
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(detectLang)
+  const location = useLocation()
+  const navigate = useNavigate()
+  const lang = getLangFromPathname(location.pathname)
 
   useEffect(() => {
     document.documentElement.lang = lang
   }, [lang])
 
-  const setLang = useCallback((next: Lang) => {
-    try {
-      localStorage.setItem(STORAGE_KEY, next)
-    } catch {
-      // persistence is best-effort
-    }
-    setLangState(next)
-  }, [])
+  const setLang = useCallback(
+    (next: Lang) => {
+      if (next === lang) return
+      const path = stripLangPrefix(location.pathname)
+      navigate(`${localizePath(next, path)}${location.search}${location.hash}`)
+    },
+    [lang, location.pathname, location.search, location.hash, navigate]
+  )
 
   const value = useMemo(() => ({ lang, setLang, t: DICTIONARIES[lang] }), [lang, setLang])
 

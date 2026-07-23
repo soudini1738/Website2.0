@@ -1,15 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://orbyth.com/</loc>
+    <lastmod>2026-07-22</lastmod>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orbyth.com/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://orbyth.com/nl" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://orbyth.com/fr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://orbyth.com/" />
+  </url>
+  <url>
+    <loc>https://orbyth.com/nl</loc>
+    <lastmod>2026-07-22</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orbyth.com/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://orbyth.com/nl" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://orbyth.com/fr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://orbyth.com/" />
+  </url>
+  <url>
+    <loc>https://orbyth.com/fr</loc>
+    <lastmod>2026-07-22</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orbyth.com/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://orbyth.com/nl" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://orbyth.com/fr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://orbyth.com/" />
   </url>
   <url>
     <loc>https://orbyth.com/about</loc>
+    <lastmod>2026-07-22</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orbyth.com/about" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://orbyth.com/nl/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://orbyth.com/fr/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://orbyth.com/about" />
+  </url>
+  <url>
+    <loc>https://orbyth.com/nl/about</loc>
+    <lastmod>2026-07-22</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orbyth.com/about" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://orbyth.com/nl/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://orbyth.com/fr/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://orbyth.com/about" />
+  </url>
+  <url>
+    <loc>https://orbyth.com/fr/about</loc>
+    <lastmod>2026-07-22</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orbyth.com/about" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://orbyth.com/nl/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://orbyth.com/fr/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://orbyth.com/about" />
   </url>
   <url>
     <loc>https://orbyth.com/contact</loc>
+    <lastmod>2026-07-22</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orbyth.com/contact" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://orbyth.com/nl/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://orbyth.com/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://orbyth.com/contact" />
+  </url>
+  <url>
+    <loc>https://orbyth.com/nl/contact</loc>
+    <lastmod>2026-07-22</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orbyth.com/contact" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://orbyth.com/nl/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://orbyth.com/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://orbyth.com/contact" />
+  </url>
+  <url>
+    <loc>https://orbyth.com/fr/contact</loc>
+    <lastmod>2026-07-22</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orbyth.com/contact" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://orbyth.com/nl/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://orbyth.com/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://orbyth.com/contact" />
+  </url>
+  <url>
+    <loc>https://orbyth.com/privacy-policy</loc>
+    <lastmod>2026-07-23</lastmod>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orbyth.com/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://orbyth.com/nl/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://orbyth.com/fr/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://orbyth.com/privacy-policy" />
+  </url>
+  <url>
+    <loc>https://orbyth.com/nl/privacy-policy</loc>
+    <lastmod>2026-07-23</lastmod>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orbyth.com/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://orbyth.com/nl/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://orbyth.com/fr/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://orbyth.com/privacy-policy" />
+  </url>
+  <url>
+    <loc>https://orbyth.com/fr/privacy-policy</loc>
+    <lastmod>2026-07-23</lastmod>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orbyth.com/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://orbyth.com/nl/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://orbyth.com/fr/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://orbyth.com/privacy-policy" />
   </url>
 </urlset>

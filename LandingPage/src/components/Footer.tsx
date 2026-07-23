@@ -2,15 +2,19 @@ import { Link } from "react-router-dom"
 
 import { LangSwitch } from "@/components/LangSwitch"
 import { useI18n } from "@/i18n/useI18n"
+import { useLocalizedPath } from "@/i18n/useLocalizedPath"
+import { OPEN_COOKIE_SETTINGS_EVENT } from "@/lib/consent"
 import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_TEL, LINKEDIN_URL } from "@/lib/constants"
 
 export function Footer() {
   const { t } = useI18n()
+  const localize = useLocalizedPath()
 
   const links = [
-    { label: t.nav.home, to: "/" },
-    { label: t.nav.about, to: "/about" },
-    { label: t.nav.contact, to: "/contact" },
+    { label: t.nav.home, to: localize("/") },
+    { label: t.nav.about, to: localize("/about") },
+    { label: t.nav.contact, to: localize("/contact") },
+    { label: t.footer.privacyPolicy, to: localize("/privacy-policy") },
   ]
 
   return (
@@ -81,9 +85,16 @@ export function Footer() {
       </div>
 
       <div className="border-t border-line">
-        <p className="mx-auto max-w-6xl px-6 py-5 font-mono text-xs text-stone">
-          © {new Date().getFullYear()} ORBYTH. {t.footer.rights}
-        </p>
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-5 font-mono text-xs text-stone sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} ORBYTH. {t.footer.rights}</p>
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new Event(OPEN_COOKIE_SETTINGS_EVENT))}
+            className="text-left transition-colors hover:text-ink"
+          >
+            {t.footer.cookiePrefs}
+          </button>
+        </div>
       </div>
     </footer>
   )

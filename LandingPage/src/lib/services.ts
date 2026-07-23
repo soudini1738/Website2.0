@@ -1,13 +1,12 @@
-// Single source of truth linking a Services card to its detail route and i18n copy.
-// `slug` is language-independent and lives here (not in the dictionaries); `key`
-// indexes `t.serviceDetails.items[key]` and `t.meta.services[key]`; `cardIndex`
-// matches the order of `home.services.items`.
+// Single source of truth linking a Services card to its modal content. `key`
+// indexes `t.serviceDetails.items[key]`; `cardIndex` matches the order of
+// `home.services.items`.
 export const SERVICE_PAGES = [
-  { slug: "administratie", key: "administratie", cardIndex: 0 },
-  { slug: "data", key: "data", cardIndex: 1 },
-  { slug: "follow-ups", key: "followUps", cardIndex: 2 },
-  { slug: "rapportering", key: "reporting", cardIndex: 3 },
-  { slug: "facturatie", key: "finance", cardIndex: 4 },
+  { key: "administratie", cardIndex: 0 },
+  { key: "data", cardIndex: 1 },
+  { key: "followUps", cardIndex: 2 },
+  { key: "reporting", cardIndex: 3 },
+  { key: "finance", cardIndex: 4 },
 ] as const
 
 export type ServiceKey = (typeof SERVICE_PAGES)[number]["key"]

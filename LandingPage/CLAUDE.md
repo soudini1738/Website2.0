@@ -2,7 +2,7 @@
 
 ## Project Overview
 - **Company Name:** ORBYTH
-- **Core Business:** AI automation for SMEs — we design, build and run automations that take over repetitive tasks (fewer hours lost, fewer errors).
+- **Core Business:** Systems build/integration architecture — we design and engineer the systems that connect a company's platforms (TMS, ERP, WMS, etc.) and make them work together around how the business actually operates. Automation is part of what we build, not what we are; the core is engineering working, connected systems, not just automating tasks.
 - **Target Audience:** SMEs (kmo's) in transport & logistics specifically — not all sectors. B2B, premium positioning.
 - **Tone & Style:** Premium, direct, authoritative. Sentence case, active voice, no exclamation marks. Dutch copy uses formal "u" and Flemish vocabulary ("kmo's").
 
@@ -25,7 +25,8 @@
 ## Internationalization (EN/NL/FR)
 - Custom typed i18n in `src/i18n/` — no library. `translations/en.ts` is the source of truth; `translations/nl.ts` and `translations/fr.ts` must mirror its shape (`satisfies Messages`, enforced by `npm run typecheck`).
 - **Rule: every copy change goes into ALL THREE dictionaries.** Components consume copy via `useI18n()` (`t.home.hero.title`) — never hardcode UI strings.
-- Language: stored choice (localStorage `orbyth-lang`) wins; otherwise the site always opens in English (no browser detection). Switchers: `LangMenu` (navbar dropdown, hover + click) and `LangSwitch` (footer + mobile menu).
+- **Language lives in the URL, not client state.** English is the default with no prefix (`/`, `/about`); Dutch and French get their own crawlable prefix (`/nl`, `/nl/about`, `/fr/about`, …), each with a real `<link rel="canonical">` and `hreflang` alternates set per route by `usePageMeta` (`src/hooks/usePageMeta.ts`). `I18nProvider` derives `lang` from the current path (`src/i18n/langPath.ts`); `setLang` navigates to the equivalent path under the new prefix rather than mutating state. Internal links must go through `useLocalizedPath()` (`localize("/about")`) so navigation stays within the current language; never hardcode an unprefixed `to="/about"`. Switchers: `LangMenu` (navbar dropdown, hover + click) and `LangSwitch` (footer + mobile menu) just call `setLang`.
+- `public/sitemap.xml` lists every page × language (en/nl/fr) with mutual `hreflang` alternates — update it by hand whenever a route is added or removed.
 - Registers: NL formal "u" + Flemish "kmo's"; FR formal "vous" + "PME".
 
 ## Development Rules

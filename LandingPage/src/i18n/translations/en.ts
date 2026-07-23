@@ -17,6 +17,11 @@ export const en = {
       description:
         "Tell us what eats your team's time. Plan a free audit or book a 30-minute intro call with ORBYTH.",
     },
+    privacyPolicy: {
+      title: "Privacy policy | ORBYTH",
+      description:
+        "How ORBYTH collects, uses and protects personal data when you visit orbyth.com or contact us.",
+    },
     services: {
       administratie: {
         title: "Administrative workflow automation | ORBYTH",
@@ -62,10 +67,10 @@ export const en = {
   home: {
     hero: {
       kicker: "AI automation for SMEs",
-      title: "We engineer the systems your operations actually run on",
+      title: "We engineer the systems your operations run on",
       subline:
         "ORBYTH is the connective layer between your TMS, ERP and WMS. Your team wins back hours every week, and errors stop reaching your customers.",
-      ctaPrimary: "Plan a free audit",
+      ctaPrimary: "Plan an audit",
       ctaSecondary: "See how we work",
       diagramTasks: ["Invoices", "Mailbox", "Data entry", "Reports", "Scheduling"],
       diagramDescriptions: [
@@ -276,7 +281,7 @@ export const en = {
         },
         cta: {
           title: "Curious what we'd automate first?",
-          body: "Book a short intro call and we'll walk through your admin, no preparation needed.",
+          body: "Book a short intro call and we'll walk through your admin.",
         },
       },
       data: {
@@ -543,5 +548,110 @@ export const en = {
     contact: "Contact",
     language: "Language",
     rights: "All rights reserved.",
+    cookiePrefs: "Change cookie preferences",
+    privacyPolicy: "Privacy policy",
+  },
+
+  cookies: {
+    ariaLabel: "Cookie notice",
+    shortBody: "We use cookies to improve our site.",
+    body: "We use necessary cookies to make our site work. With your consent we also use analytics cookies (Google Analytics) to understand how the site is used. You decide what we may use.",
+    moreInfo: "More info",
+    lessInfo: "Less info",
+    accept: "Accept",
+    necessaryOnly: "Accept necessary cookies only",
+    reject: "Reject",
+    necessary: {
+      title: "Necessary",
+      body: "Required for the site to function and to remember your cookie choice. Always active.",
+    },
+    analytics: {
+      title: "Analytics",
+      body: "Google Analytics helps us understand how visitors use the site, so we can improve it. Loaded only after you accept.",
+    },
+  },
+
+  privacyPolicy: {
+    title: "Privacy policy",
+    intro:
+      'ORBYTH is a Belgian company based in Antwerp. We engineer systems integrations and automations for small and medium-sized enterprises (SMEs). This privacy policy explains how we collect, use and protect personal data when you visit orbyth.com or contact us.',
+    sections: [
+      {
+        title: "1. Data controller",
+        body: "",
+        items: [
+          {
+            label: "",
+            body: "ORBYTH, Antwerp, Belgium"
+          },
+          {
+            label: "",
+            body: "Contact for privacy matters: info@orbyth.com",
+          },
+          {
+            label: "",
+            body: "Phone number: +32 495 75 02 36"
+          }
+        ],
+      },
+      {
+        title: "2. What data we collect and why",
+        body: "",
+        items: [
+          {
+            label: "a) Contact form.",
+            body: "Contact form. When you submit our contact form, we collect the information you provide: name, company name, email address and your message. We use this data solely to respond to your enquiry. Providing this data is voluntary, but without it we cannot reply to you."
+          },
+          {
+            label: "",
+            body: "Your message is submitted through Web3Forms, a third-party form-processing service based in the United States, which forwards it to our inbox. Web3Forms acts as a processor on our behalf."
+          },
+          {
+            label: "b) Scheduling a call (Calendly).",
+            body: "If you click through to book your call, you leave our Site and use Calendly, an independent US-based scheduling service. Calendly processes your name, email address and chosen time slot as its own data controller, under its own privacy policy. We only receive the booking details necessary to hold the call."
+          },
+        ],
+      },
+      {
+        title: "3. Cookies",
+        body: "Our Site uses Google Analytics, a web analytics tool provided by Google, to understand how visitors use the Site. This involves placing cookies on your device that collect information such as pages visited, time spent on the Site, and general location data. This data is processed only with your consent, collected through the cookie banner shown on your first visit. You can withdraw your consent at any time.",
+        items: [],
+      },
+      {
+        title: "4. Recipients and international transfers",
+        body: "We share personal data only with the service providers strictly necessary to operate the Site and respond to enquiries: Web3Forms (form processing) and Netlify (hosting), both based in the United States, and Calendly (scheduling), also US-based, if you choose to use it. Where personal data is transferred outside the European Economic Area, these providers rely on appropriate safeguards such as Standard Contractual Clauses. We do not sell or rent personal data to third parties.",
+        items: [],
+      },
+      {
+        title: "5. Retention period",
+        body: "We retain contact form submissions only as long as necessary to handle your enquiry or, where relevant, an ongoing business relationship, unless a longer period is legally required. Server logs are retained by Netlify only as long as necessary for security purposes.",
+        items: [],
+      },
+      {
+        title: "6. Your rights",
+        body: "Under the GDPR, you have the right to: access the personal data we hold about you; request rectification of inaccurate data; request erasure of your data; restrict or object to processing; and request data portability. Where processing relies on your consent, you may withdraw it at any time. To exercise any of these rights, contact us at info@orbyth.com.",
+        items: [
+          {
+            label:"",
+            body: "You also have the right to lodge a complaint with the Belgian Data Protection Authority (Gegevensbeschermingsautoriteit), Drukpersstraat 35 1000 Brussels, Belgium www.gegevensbeschermingsautoriteit.be."
+          }
+        ],
+      },
+      {
+        title: "7. Automated decision-making",
+        body: "We do not use automated decision-making or profiling that produces legal or similarly significant effects on you.",
+        items: [],
+      },
+      {
+        title: "8. Changes to this policy",
+        body: "We may update this privacy policy from time to time. The date at the top reflects the most recent revision. Material changes will be reflected on this page.",
+        items: [],
+      },
+      {
+        title: "9. Contact",
+        body: "Questions about this policy or your personal data? Contact us at info@orbyth.com or +32 495 75 02 36",
+        items: [],
+      },
+    ],
   },
 }

@@ -4,11 +4,13 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Reveal } from "@/components/Reveal"
 import { useI18n } from "@/i18n/useI18n"
+import { useLocalizedPath } from "@/i18n/useLocalizedPath"
 import { CALENDLY_URL } from "@/lib/constants"
 
 // Shared closing CTA band: gold-tinted panel with an orbit ring in the corner.
 export function CtaBand() {
   const { t } = useI18n()
+  const localize = useLocalizedPath()
 
   return (
     <section className="border-t border-line">
@@ -31,7 +33,7 @@ export function CtaBand() {
             <p className="mt-4 max-w-xl leading-relaxed text-muted-foreground">{t.cta.body}</p>
             <div className="mt-9 flex flex-col gap-5 sm:flex-row sm:items-center">
               <Button
-                render={<Link to="/contact" />}
+                render={<Link to={localize("/contact")} />}
                 size="lg"
                 className="h-11 rounded-full px-6"
               >

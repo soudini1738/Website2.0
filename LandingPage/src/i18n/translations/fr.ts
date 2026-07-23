@@ -19,6 +19,11 @@ export const fr = {
       description:
         "Dites-nous ce qui dévore le temps de votre équipe. Planifiez un audit d'automatisation gratuit ou réservez un appel de 30 minutes avec ORBYTH.",
     },
+    privacyPolicy: {
+      title: "Politique de confidentialité | ORBYTH",
+      description:
+        "Comment ORBYTH collecte, utilise et protège les données personnelles lorsque vous visitez orbyth.com ou nous contactez.",
+    },
     services: {
       administratie: {
         title: "Automatisation des flux administratifs | ORBYTH",
@@ -64,10 +69,10 @@ export const fr = {
   home: {
     hero: {
       kicker: "Automatisation IA pour PME",
-      title: "Nous concevons les systèmes sur lesquels repose réellement votre exploitation",
+      title: "Nous concevons les systèmes sur lesquels repose votre exploitation",
       subline:
         "ORBYTH est la couche qui relie votre TMS, votre ERP et votre WMS. Votre équipe regagne des heures chaque semaine, et les erreurs n'atteignent plus vos clients.",
-      ctaPrimary: "Planifiez un audit d'automatisation gratuit",
+      ctaPrimary: "Planifiez un audit",
       ctaSecondary: "Notre méthode",
       diagramTasks: ["Factures", "Boîte mail", "Saisie de données", "Rapports", "Planification"],
       diagramDescriptions: [
@@ -278,7 +283,7 @@ export const fr = {
         },
         cta: {
           title: "Curieux de savoir ce que nous automatiserions en premier ?",
-          body: "Réservez un court appel découverte et nous passerons en revue votre administratif, aucune préparation nécessaire.",
+          body: "Réservez un court appel découverte et nous passerons en revue votre administratif.",
         },
       },
       data: {
@@ -545,5 +550,110 @@ export const fr = {
     contact: "Contact",
     language: "Langue",
     rights: "Tous droits réservés.",
+    cookiePrefs: "Modifier les préférences de cookies",
+    privacyPolicy: "Politique de confidentialité",
+  },
+
+  cookies: {
+    ariaLabel: "Avis relatif aux cookies",
+    shortBody: "Nous utilisons des cookies pour améliorer notre site.",
+    body: "Nous utilisons des cookies nécessaires au fonctionnement du site. Avec votre accord, nous utilisons aussi des cookies analytiques (Google Analytics) pour comprendre comment le site est utilisé. Vous décidez de ce que nous pouvons utiliser.",
+    moreInfo: "Plus d'infos",
+    lessInfo: "Moins d'infos",
+    accept: "Accepter",
+    necessaryOnly: "Accepter uniquement les cookies nécessaires",
+    reject: "Refuser",
+    necessary: {
+      title: "Nécessaires",
+      body: "Requis pour le fonctionnement du site et pour mémoriser votre choix de cookies. Toujours actifs.",
+    },
+    analytics: {
+      title: "Analytiques",
+      body: "Google Analytics nous aide à comprendre comment les visiteurs utilisent le site, afin de l'améliorer. Chargé uniquement après votre acceptation.",
+    },
+  },
+
+  privacyPolicy: {
+    title: "Politique de confidentialité",
+    intro:
+      "ORBYTH est une société belge basée à Anvers. Nous concevons des intégrations de systèmes et des automatisations pour les petites et moyennes entreprises (PME). Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons les données personnelles lorsque vous visitez orbyth.com ou nous contactez.",
+    sections: [
+      {
+        title: "1. Responsable du traitement",
+        body: "",
+        items: [
+          {
+            label: "",
+            body: "ORBYTH, Anvers, Belgique",
+          },
+          {
+            label: "",
+            body: "Contact pour les questions de confidentialité : info@orbyth.com",
+          },
+          {
+            label: "",
+            body: "Numéro de téléphone : +32 495 75 02 36",
+          },
+        ],
+      },
+      {
+        title: "2. Quelles données nous collectons et pourquoi",
+        body: "",
+        items: [
+          {
+            label: "a) Formulaire de contact.",
+            body: "Formulaire de contact. Lorsque vous soumettez notre formulaire de contact, nous collectons les informations que vous fournissez : nom, nom de l'entreprise, adresse e-mail et votre message. Nous utilisons ces données uniquement pour répondre à votre demande. La fourniture de ces données est volontaire, mais sans elles, nous ne pouvons pas vous répondre.",
+          },
+          {
+            label: "",
+            body: "Votre message est transmis via Web3Forms, un service tiers de traitement de formulaires basé aux États-Unis, qui le transfère vers notre boîte de réception. Web3Forms agit en tant que sous-traitant pour notre compte.",
+          },
+          {
+            label: "b) Planifier un appel (Calendly).",
+            body: "Si vous cliquez pour réserver votre appel, vous quittez notre Site et utilisez Calendly, un service de planification indépendant basé aux États-Unis. Calendly traite votre nom, votre adresse e-mail et le créneau horaire choisi en tant que responsable du traitement distinct, conformément à sa propre politique de confidentialité. Nous ne recevons que les informations de réservation nécessaires pour tenir l'appel.",
+          },
+        ],
+      },
+      {
+        title: "3. Cookies",
+        body: "Notre Site utilise Google Analytics, un outil d'analyse web fourni par Google, pour comprendre comment les visiteurs utilisent le Site. Cela implique le placement de cookies sur votre appareil qui collectent des informations telles que les pages visitées, le temps passé sur le Site et des données de localisation générales. Ces données ne sont traitées qu'avec votre consentement, recueilli via la bannière de cookies affichée lors de votre première visite. Vous pouvez retirer votre consentement à tout moment.",
+        items: [],
+      },
+      {
+        title: "4. Destinataires et transferts internationaux",
+        body: "Nous ne partageons les données personnelles qu'avec les prestataires strictement nécessaires au fonctionnement du Site et au traitement des demandes : Web3Forms (traitement des formulaires) et Netlify (hébergement), tous deux basés aux États-Unis, ainsi que Calendly (planification), également basé aux États-Unis, si vous choisissez de l'utiliser. Lorsque des données personnelles sont transférées en dehors de l'Espace économique européen, ces prestataires s'appuient sur des garanties appropriées telles que les clauses contractuelles types. Nous ne vendons ni ne louons jamais de données personnelles à des tiers.",
+        items: [],
+      },
+      {
+        title: "5. Durée de conservation",
+        body: "Nous conservons les soumissions du formulaire de contact uniquement le temps nécessaire pour traiter votre demande ou, le cas échéant, une relation commerciale en cours, sauf si une durée plus longue est légalement requise. Les journaux serveur sont conservés par Netlify uniquement le temps nécessaire à des fins de sécurité.",
+        items: [],
+      },
+      {
+        title: "6. Vos droits",
+        body: "En vertu du RGPD, vous avez le droit de : accéder aux données personnelles que nous détenons à votre sujet ; demander la rectification de données inexactes ; demander l'effacement de vos données ; restreindre le traitement ou vous y opposer ; et demander la portabilité de vos données. Lorsque le traitement repose sur votre consentement, vous pouvez le retirer à tout moment. Pour exercer l'un de ces droits, contactez-nous à l'adresse info@orbyth.com.",
+        items: [
+          {
+            label: "",
+            body: "Vous avez également le droit d'introduire une réclamation auprès de l'Autorité de protection des données belge, Drukpersstraat 35, 1000 Bruxelles, Belgique, www.autoriteprotectiondonnees.be.",
+          },
+        ],
+      },
+      {
+        title: "7. Décision automatisée",
+        body: "Nous n'utilisons pas de décision automatisée ni de profilage produisant des effets juridiques ou vous affectant de manière significative similaire.",
+        items: [],
+      },
+      {
+        title: "8. Modifications de cette politique",
+        body: "Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. La date en haut de la page reflète la révision la plus récente. Les modifications importantes seront indiquées sur cette page.",
+        items: [],
+      },
+      {
+        title: "9. Contact",
+        body: "Des questions sur cette politique ou sur vos données personnelles ? Contactez-nous à info@orbyth.com ou au +32 495 75 02 36.",
+        items: [],
+      },
+    ],
   },
 } satisfies Messages

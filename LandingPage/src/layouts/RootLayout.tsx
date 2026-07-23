@@ -4,6 +4,7 @@ import { Outlet, useLocation } from "react-router-dom"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
 import { BackToTop } from "@/components/BackToTop"
+import { CookieConsent } from "@/components/CookieConsent"
 import { useI18n } from "@/i18n/useI18n"
 
 export function RootLayout() {
@@ -29,6 +30,7 @@ export function RootLayout() {
       </main>
       <Footer />
       <BackToTop />
+      <CookieConsent />
     </>
   )
 }

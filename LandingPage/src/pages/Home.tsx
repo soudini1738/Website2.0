@@ -16,10 +16,12 @@ import { OrbitDiagram } from "@/components/OrbitDiagram"
 import { ProcessSteps } from "@/components/ProcessSteps"
 import { Reveal } from "@/components/Reveal"
 import { Section } from "@/components/Section"
+import { ServiceModal } from "@/components/ServiceModal"
 import { useLoadReveal } from "@/hooks/useRevealOnScroll"
 import { usePageMeta } from "@/hooks/usePageMeta"
 import { useI18n } from "@/i18n/useI18n"
-import { servicePageForCard } from "@/lib/services"
+import { useLocalizedPath } from "@/i18n/useLocalizedPath"
+import { servicePageForCard, type ServiceKey } from "@/lib/services"
 
 // Simple Icons doesn't carry Microsoft or Workato (trademark / not listed), and the
 // local PNGs for those two are white-on-transparent (made for the old dark design) —
@@ -37,9 +39,11 @@ const PARTNERS: { name: string; iconSrc?: string; fontFamily?: string }[] = [
 
 export function Home() {
   const { t } = useI18n()
+  const localize = useLocalizedPath()
   const location = useLocation()
   const heroRevealed = useLoadReveal()
   const [openFaqItems, setOpenFaqItems] = useState<string[]>([])
+  const [openService, setOpenService] = useState<ServiceKey | null>(null)
 
   usePageMeta(t.meta.home.title, t.meta.home.description)
 
@@ -78,7 +82,7 @@ export function Home() {
             )}
             style={{ transitionDelay: "0.3s" }}
           >
-            <Button render={<Link to="/contact" />} size="lg" className="h-11 rounded-full px-6">
+            <Button render={<Link to={localize("/contact")} />} size="lg" className="h-11 rounded-full px-6">
               {t.home.hero.ctaPrimary}
               <ArrowRight data-icon="inline-end" />
             </Button>
@@ -156,7 +160,7 @@ export function Home() {
           {t.home.services.items.map((service, i) => {
             const page = servicePageForCard(i)
             const cardClass =
-              "group flex h-full flex-col rounded-lg border border-line border-t-2 border-t-transparent bg-card p-8 transition-colors hover:border-t-gold"
+              "group flex h-full flex-col rounded-lg border border-line border-t-2 border-t-transparent bg-card p-8 text-left transition-colors hover:border-t-gold"
             const cardBody = (
               <>
                 <p className="kicker">{service.label}</p>
@@ -184,13 +188,13 @@ export function Home() {
             return (
               <Reveal key={service.title} stagger={i + 1} className="h-full">
                 {page ? (
-                  <Link
-                    to={`/services/${page.slug}`}
-                    state={{ fromServices: true }}
+                  <button
+                    type="button"
+                    onClick={() => setOpenService(page.key)}
                     className={cardClass}
                   >
                     {cardBody}
-                  </Link>
+                  </button>
                 ) : (
                   <div className={cardClass}>{cardBody}</div>
                 )}
@@ -199,6 +203,11 @@ export function Home() {
           })}
         </div>
       </Section>
+
+      <ServiceModal
+        serviceKey={openService}
+        onOpenChange={(open) => !open && setOpenService(null)}
+      />
 
       {/* 5 — Process: the four steps on one orbit arc, scrubbed by scroll on lg */}
       <ProcessSteps
@@ -236,14 +245,7 @@ export function Home() {
         <Reveal className="max-w-3xl">
           <Accordion value={openFaqItems} onValueChange={setOpenFaqItems}>
             {t.home.faq.items.map((item) => (
-              <AccordionItem
-                key={item.question}
-                value={item.question}
-                onMouseEnter={() => setOpenFaqItems([item.question])}
-                onMouseLeave={() =>
-                  setOpenFaqItems((items) => items.filter((q) => q !== item.question))
-                }
-              >
+              <AccordionItem key={item.question} value={item.question}>
                 <AccordionTrigger className="font-display py-5 text-base font-semibold md:text-lg">
                   {item.question}
                 </AccordionTrigger>

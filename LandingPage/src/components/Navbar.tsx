@@ -7,11 +7,13 @@ import { Button } from "@/components/ui/button"
 import { LangMenu } from "@/components/LangMenu"
 import { LangSwitch } from "@/components/LangSwitch"
 import { useI18n } from "@/i18n/useI18n"
+import { useLocalizedPath } from "@/i18n/useLocalizedPath"
 import { CALENDLY_URL } from "@/lib/constants"
 import { useScrollDirection } from "@/hooks/useScrollDirection"
 
 export function Navbar() {
   const { t } = useI18n()
+  const localize = useLocalizedPath()
   const { scrolled } = useScrollDirection()
   const [menuOpen, setMenuOpen] = useState(false)
   const { pathname } = useLocation()
@@ -20,9 +22,9 @@ export function Navbar() {
   const pill = scrolled || menuOpen
 
   const links = [
-    { label: t.nav.home, to: "/" },
-    { label: t.nav.about, to: "/about" },
-    { label: t.nav.contact, to: "/contact" },
+    { label: t.nav.home, to: localize("/") },
+    { label: t.nav.about, to: localize("/about") },
+    { label: t.nav.contact, to: localize("/contact") },
   ]
 
   useEffect(() => {
@@ -50,7 +52,7 @@ export function Navbar() {
         )}
       >
         {/* Keyed on pathname so the logo + wordmark animations replay on every navigation */}
-        <Link key={pathname} to="/" className="flex shrink-0 items-center gap-2">
+        <Link key={pathname} to={localize("/")} className="flex shrink-0 items-center gap-2">
           {/* The logo file has generous padding around the mark — crop it via scale */}
           <span className="logo-pop flex size-10 items-center justify-center overflow-hidden">
             <img src="/pics/Logo.png" alt="ORBYTH logo" className="size-full scale-[2.2] object-contain" />
