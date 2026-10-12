@@ -71,7 +71,7 @@ export const fr = {
       kicker: "Automatisation IA pour PME",
       title: "Nous concevons les systèmes sur lesquels repose votre exploitation",
       subline:
-        "ORBYTH est la couche qui relie votre TMS, votre ERP et votre WMS. Votre équipe regagne des heures chaque semaine, et les erreurs n'atteignent plus vos clients.",
+        "Nous réduisons votre travail manuel de moitié. Si nous n'y parvenons pas, nous vous remboursons la différence, minute par minute.",
       ctaPrimary: "Planifiez un audit",
       ctaSecondary: "Notre méthode",
       diagramTasks: ["Factures", "Boîte mail", "Saisie de données", "Rapports", "Planification"],

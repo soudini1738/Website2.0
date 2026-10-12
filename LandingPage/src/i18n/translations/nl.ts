@@ -71,7 +71,7 @@ export const nl = {
       kicker: "AI-automatisering voor kmo's",
       title: "Wij bouwen de systemen waar uw operatie op draait",
       subline:
-        "ORBYTH is de verbindende laag tussen uw TMS, ERP en WMS. Uw team wint elke week uren terug, en fouten bereiken uw klanten niet meer.",
+        "Wij halveren je handmatige werk. Lukt dat niet, dan betalen wij je het verschil, minuut per minuut.",
       ctaPrimary: "Plan een audit",
       ctaSecondary: "Zo werken we",
       diagramTasks: ["Facturen", "Mailbox", "Data-invoer", "Rapporten", "Planning"],
